@@ -44,7 +44,7 @@ function Navbar() {
           className="w-[200px] object-contain"
         />
 
-        <nav className="flex gap-6 text-white">
+       <nav className="hidden md:flex gap-6 text-white">
           <Link to="/" className="hover:text-orange-500">หน้าหลัก</Link>
           <Link to="/products" className="hover:text-orange-500">ผลิตภัณฑ์</Link>
           <Link to="/news" className="hover:text-orange-500">ข่าวสาร</Link>
@@ -76,7 +76,7 @@ function Home() {
             Richtech paint
           </p>
 
-          <h1 className="text-6xl lg:text-6xl font-black leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
             สีคุณภาพสูง
             <span className="block text-orange-500">
               สำหรับทุกพื้นผิว
@@ -139,7 +139,7 @@ function Home() {
             alt="paint"
             className="
               relative
-              w-[250%] max-w-[850px] object-contain
+             w-full max-w-[850px] object-contain
               object-contain
               drop-shadow-[0_0_80px_rgba(255,115,0,.45)]
               hover:scale-105
