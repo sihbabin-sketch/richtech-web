@@ -2,7 +2,7 @@ import fbIcon from "./assets/facebook.png";
 import phoneIcon from "./assets/phone-removebg-preview.png";
 import lineIcon from "./assets/LINE.png";
 import { motion, AnimatePresence } from "framer-motion";
-import Products from "./Products";
+import Products from "./Products.jsx";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 
 import paintImage from "./assets/paint.png";
