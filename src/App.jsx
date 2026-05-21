@@ -1,4 +1,4 @@
-import fbIcon from "./assets/facebook.png";
+import fbIcon from "./assets/fb.png";
 import phoneIcon from "./assets/phone-removebg-preview.png";
 import lineIcon from "./assets/LINE.png";
 import { motion, AnimatePresence } from "framer-motion";
