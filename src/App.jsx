@@ -1,3 +1,4 @@
+import React from "react";
 import fbIcon from "./assets/fb.png";
 import phoneIcon from "./assets/phone-removebg-preview.png";
 import lineIcon from "./assets/LINE.png";
@@ -34,17 +35,20 @@ function PageTransition({ children }) {
 }
 /* ================= NAVBAR ================= */
 function Navbar() {
+  const [open, setOpen] = React.useState(false);
+
   return (
-    <header className="border-b border-neutral-800">
+    <header className="border-b border-neutral-800 bg-black relative z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
 
         <img
           src={interiorImage2}
           alt="logo"
-          className="w-[200px] object-contain"
+          className="w-[180px] object-contain"
         />
 
-       <nav className="hidden md:flex gap-6 text-white">
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex gap-6 text-white">
           <Link to="/" className="hover:text-orange-500">หน้าหลัก</Link>
           <Link to="/products" className="hover:text-orange-500">ผลิตภัณฑ์</Link>
           <Link to="/news" className="hover:text-orange-500">ข่าวสาร</Link>
@@ -52,7 +56,41 @@ function Navbar() {
           <Link to="/contact" className="hover:text-orange-500">ติดต่อ</Link>
         </nav>
 
+        {/* Mobile Button */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-white text-3xl"
+        >
+          ☰
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="md:hidden bg-black border-t border-orange-500/20 px-6 py-4 flex flex-col gap-4 text-white">
+
+          <Link to="/" onClick={() => setOpen(false)}>
+            หน้าหลัก
+          </Link>
+
+          <Link to="/products" onClick={() => setOpen(false)}>
+            ผลิตภัณฑ์
+          </Link>
+
+          <Link to="/news" onClick={() => setOpen(false)}>
+            ข่าวสาร
+          </Link>
+
+          <Link to="/about" onClick={() => setOpen(false)}>
+            เกี่ยวกับเรา
+          </Link>
+
+          <Link to="/contact" onClick={() => setOpen(false)}>
+            ติดต่อ
+          </Link>
+
+        </div>
+      )}
     </header>
   );
 }
