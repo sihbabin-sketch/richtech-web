@@ -1,3 +1,5 @@
+import News from "./News";
+import NewsDetail from "./NewsDetail";
 import React from "react";
 import fbIcon from "./assets/fb.png";
 import phoneIcon from "./assets/phone-removebg-preview.png";
@@ -41,11 +43,19 @@ function Navbar() {
     <header className="border-b border-neutral-800 bg-black relative z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
 
-        <img
-          src={interiorImage2}
-          alt="logo"
-          className="w-[180px] object-contain"
-        />
+      <Link to="/">
+  <img
+    src={interiorImage2}
+    alt="logo"
+    className="
+      w-[180px]
+      object-contain
+      cursor-pointer
+      hover:scale-105
+      transition
+    "
+  />
+</Link>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-6 text-white">
@@ -440,9 +450,7 @@ function Home() {
 }
 
 /* ================= OTHER PAGES ================= */
-function News() {
-  return <div className="p-10 text-3xl text-orange-500">ข่าวสาร</div>;
-}
+
 
 function About() {
   return (
@@ -957,17 +965,27 @@ export default function App() {
           }
         />
 
-        <Route
-          path="/news"
-          element={
-            <Layout>
-              <PageTransition>
-                <News />
-              </PageTransition>
-            </Layout>
-          }
-        />
+       <Route
+  path="/news"
+  element={
+    <Layout>
+      <PageTransition>
+        <News />
+      </PageTransition>
+    </Layout>
+  }
+/>
 
+<Route
+  path="/news/:id"
+  element={
+    <Layout>
+      <PageTransition>
+        <NewsDetail />
+      </PageTransition>
+    </Layout>
+  }
+/>
         <Route
           path="/about"
           element={
