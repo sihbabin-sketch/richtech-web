@@ -1154,7 +1154,6 @@ const categories = [
       code: "RTP-P700",
 
       name: "รองพื้นอีพ็อกซี่ 2 ส่วน สำหรับป้องกันไฟฟ้าสถิต",
-
   
 
       description:
@@ -1250,6 +1249,16 @@ const categories = [
 
       name: "สีรองพื้นกันสนิมอีพ็อกซี่ ด้วยผงซิงค์ฟอตเฟต",
 
+      colors: [
+    "RPL-1001",
+    "RAL-1001",
+  "RAL-1013",
+  "RAL-1014",
+  "RAL-1015",
+  "RAL-1028",
+  "RAL-1032",
+  "RAL-1034",
+  ],
     
 
       description:
