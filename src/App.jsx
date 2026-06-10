@@ -2,7 +2,7 @@ import News from "./News";
 import NewsDetail from "./NewsDetail";
 import React from "react";
 import fbIcon from "./assets/fb.png";
-import phoneIcon from "./assets/phone-removebg-preview.png";
+import phoneIcon from "./assets/2.png";
 import lineIcon from "./assets/LINE.png";
 import { motion, AnimatePresence } from "framer-motion";
 import Products from "./Products.jsx";
@@ -1011,5 +1011,6 @@ export default function App() {
       </Routes>
 
     </AnimatePresence>
+    
   );
 }

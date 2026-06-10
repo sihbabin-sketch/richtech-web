@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import newsData from "./data/newsData";
 
+import newsVideo from "./assets/เวลสเวด2 PR.mp4";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -85,41 +86,43 @@ export default function NewsDetail() {
         className="rounded-3xl overflow-hidden mb-10"
       >
 
-        {news.images.map((img, index) => (
+       {news.images?.map((img, index) => (
+  <SwiperSlide key={index}>
+    <img
+      src={img}
+      alt=""
+      className="
+        w-full
+        h-[300px]
+        md:h-[500px]
+        object-contain
+      "
+    />
+  </SwiperSlide>
+))}
 
-          <SwiperSlide key={index}>
+        </Swiper>
 
-            <img
-  src={img}
-  alt=""
-  className="
-    w-full
-    h-[300px]
-    md:h-[500px]
-    object-contain
-  "
-
-        
-            />
-
-          </SwiperSlide>
-
-        ))}
-
-      </Swiper>
-
-      {/* CONTENT */}
-    <p
-  className="
-  max-w-2xl
+<div className="flex justify-center mb-10">
+  <video
+    controls
+    playsInline
+    className="w-full max-w-[400px] rounded-3xl"
+  >
+    <source src={newsVideo} type="video/mp4" />
+  </video>
+</div>
+<p
+  className="    max-w-2xl
     text-left
     text-neutral-400
     mt-4
     leading-relaxed
   "
 >
-        {news.content}
-      </p>
+  {news.content}
+</p>
+
 {news.driveLink && (
   <a
     href={news.driveLink}
