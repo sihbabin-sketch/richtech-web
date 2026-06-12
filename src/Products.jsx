@@ -1400,9 +1400,9 @@ showPUS: true,
 ];
 
 export default function Products() {
-  const [active, setActive] = useState(1);
-  const [selectedItem, setSelectedItem] = useState(null);
-
+const [active, setActive] = useState(1);
+const [selectedItem, setSelectedItem] = useState(null);
+const [activeColor, setActiveColor] = useState(null);
   const detailRef = useRef(null);
 
   const current = categories.find((c) => c.id === active);
@@ -1534,6 +1534,7 @@ export default function Products() {
 {selectedItem?.colorChart?.map(([ral, name, hex], index) => (
   <div
     key={index}
+    onClick={() =>  setActiveColor(activeColor === index ? null : index)}
     className="
       group
       relative
@@ -1564,27 +1565,32 @@ export default function Products() {
     </p>
 
     {/* Hover */}
-    <div
-      className="
-        absolute
-        bottom-full
-        left-1/2
-        -translate-x-1/2
-        mb-2
-        opacity-0
-        group-hover:opacity-100
-        transition-all
-        duration-300
-        bg-black
-        border
-        border-orange-500/30
-        rounded-lg
-        px-3
-        py-2
-        whitespace-nowrap
-        shadow-xl
-      "
-    >
+   <div
+  className={`
+    absolute
+    bottom-full
+    left-1/2
+    -translate-x-1/2
+    mb-2
+    z-50
+    bg-black
+    border
+    border-orange-500/30
+    rounded-lg
+    px-3
+    py-2
+    whitespace-nowrap
+    shadow-xl
+    transition-all
+    duration-300
+    ${
+      activeColor === index
+        ? "opacity-100"
+        : "opacity-0 pointer-events-none"
+    }
+  `}
+>
+    
       <p className="text-orange-400 font-bold text-xs">
         {ral}
       </p>
