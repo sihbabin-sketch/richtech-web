@@ -20,14 +20,14 @@ export default function News() {
       <div className="grid md:grid-cols-3 gap-8">
 {/* ORANGE GLOW */}
 <motion.div
-  className="
+  className="  
     absolute
     top-0
     right-0
     w-[500px]
     h-[500px]
     bg-orange-500/20
-    blur-[90px]
+    blur-[90px] 
     rounded-full
     pointer-events-none
   "

@@ -1,335 +1,144 @@
 import { useState, useRef } from "react";
+import bannerImg from "./assets/สีอีพ็อกซี่.png";
+import s300Img from "./assets/80184.jpg";
+import s200Img from "./assets/e0fd6f1b-ac6a-4401-891c-98d63a52532a.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import img1 from "./assets/LINE_ALBUM_อบรมดับเพลิง 2568_260522_3.jpg";
+import img2 from "./assets/Screenshot 2026-06-10 084513.png";
+import img3 from "./assets/steel.png";
+import img4 from "./assets/special.png";
 
-const palettes = [
-  {
-    name: "Beige",
-    code: "RAL-1001",
-    hex: "#C9AE73",
-  },
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+const ralColors = [
+  ["RAL 1001", "Beige", "#D2B48C"],
+  ["RAL 1013", "Oyster White", "#EAE6CA"],
+  ["RAL 1014", "Ivory", "#DDC49A"],
+  ["RAL 1015", "Light Ivory", "#E6D2B5"],
 
-  {
-    name: "Oyster White",
-    code: "RAL-1013",
-    hex: "#E8E1CF",
-  },
+  ["RAL 1028", "Melon Yellow", "#FF9E00"],
+  ["RAL 1032", "Broom Yellow", "#D6A200"],
+  ["RAL 1034", "Pastel Yellow", "#F4A900"],
 
-  {
-    name: "Ivory",
-    code: "RAL-1014",
-    hex: "#E6D28C",
-  },
+  ["RAL 2000", "Yellow Orange", "#DD7907"],
+  ["RAL 2004", "Pure Orange", "#E25303"],
+  ["RAL 2008", "Bright Red Orange", "#FF5E00"],
 
-  {
-    name: "Light Ivory",
-    code: "RAL-1015",
-    hex: "#E9DFC1",
-  },
+  ["RAL 3000", "Flame Red", "#AF2B1E"],
+  ["RAL 3002", "Carmine Red", "#A52019"],
+  ["RAL 3003", "Ruby Red", "#8A1C1C"],
+  ["RAL 3015", "Light Pink", "#D8A0A6"],
+  ["RAL 3017", "Rose", "#E63244"],
+  ["RAL 3020", "Traffic Red", "#CC0605"],
 
-  {
-    name: "Melon Yellow",
-    code: "RAL-1028",
-    hex: "#D88A00",
-  },
+  ["RAL 5005", "Signal Blue", "#154889"],
+  ["RAL 5007", "Brilliant Blue", "#41678D"],
+  ["RAL 5010", "Gentian Blue", "#0E294B"],
+  ["RAL 5012", "Light Blue", "#2973B8"],
+  ["RAL 5015", "Sky Blue", "#007CB0"],
+  ["RAL 5017", "Traffic Blue", "#005B8C"],
 
-  {
-    name: "Broom Yellow",
-    code: "RAL-1032",
-    hex: "#D4A000",
-  },
+  ["RAL 6001", "Emerald Green", "#287233"],
+  ["RAL 6002", "Leaf Green", "#276235"],
+  ["RAL 6010", "Grass Green", "#4C9141"],
+  ["RAL 6018", "Yellow Green", "#57A639"],
+  ["RAL 6019", "Pastel Green", "#BDECB6"],
+  ["RAL 6024", "Traffic Green", "#308446"],
+  ["RAL 6026", "Opal Green", "#015D52"],
+  ["RAL 6029", "Mint Green", "#006F3C"],
+  ["RAL 6032", "Signal Green", "#1B8F4E"],
+  ["RAL 6037", "Pure Green", "#00A933"],
 
-  {
-    name: "Pastel Yellow",
-    code: "RAL-1034",
-    hex: "#E6A313",
-  },
+  ["RAL 7001", "Silver Grey", "#8F999F"],
+  ["RAL 7035", "Light Grey", "#D7D7D7"],
+  ["RAL 7038", "Agate Grey", "#B5B8B1"],
+  ["RAL 7040", "Window Grey", "#9DA3A6"],
+  ["RAL 7042", "Traffic Grey A", "#8D948D"],
+  ["RAL 7045", "Telegrey 1", "#91969A"],
+  ["RAL 7047", "Telegrey 4", "#CFD0CF"],
 
-  {
-    name: "Yellow Orange",
-    code: "RAL-2000",
-    hex: "#F18700",
-  },
-
-  {
-    name: "Pure Orange",
-    code: "RAL-2004",
-    hex: "#E54700",
-  },
-
-  {
-    name: "Bright Red Orange",
-    code: "RAL-2008",
-    hex: "#F06A00",
-  },
-
-  {
-    name: "Flame Red",
-    code: "RAL-3000",
-    hex: "#D40000",
-  },
-
-  {
-    name: "Carmine Red",
-    code: "RAL-3002",
-    hex: "#C40018",
-  },
-
-  {
-    name: "Ruby Red",
-    code: "RAL-3003",
-    hex: "#980000",
-  },
-
-  {
-    name: "Light Pink",
-    code: "RAL-3015",
-    hex: "#E7B3BC",
-  },
-
-  {
-    name: "Rose",
-    code: "RAL-3017",
-    hex: "#D95B6D",
-  },
-
-  {
-    name: "Traffic Red",
-    code: "RAL-3020",
-    hex: "#E00000",
-  },
-
-  {
-    name: "Signal Blue",
-    code: "RAL-5005",
-    hex: "#0047B3",
-  },
-
-  {
-    name: "Brilliant Blue",
-    code: "RAL-5007",
-    hex: "#1C66B3",
-  },
-
-  {
-    name: "Gentian Blue",
-    code: "RAL-5010",
-    hex: "#003DA5",
-  },
-
-  {
-    name: "Light Blue",
-    code: "RAL-5012",
-    hex: "#1A8FE3",
-  },
-
-  {
-    name: "Sky Blue",
-    code: "RAL-5015",
-    hex: "#0076D6",
-  },
-
-  {
-    name: "Traffic Blue",
-    code: "RAL-5017",
-    hex: "#0052CC",
-  },
-
-  {
-    name: "Emerald Green",
-    code: "RAL-6001",
-    hex: "#008A1E",
-  },
-
-  {
-    name: "Leaf Green",
-    code: "RAL-6002",
-    hex: "#007A12",
-  },
-
-  {
-    name: "Grass Green",
-    code: "RAL-6010",
-    hex: "#3C9600",
-  },
-
-  {
-    name: "Yellow Green",
-    code: "RAL-6018",
-    hex: "#56C000",
-  },
-
-  {
-    name: "Pastel Green",
-    code: "RAL-6019",
-    hex: "#B8D7A3",
-  },
-
-  {
-    name: "Traffic Green",
-    code: "RAL-6024",
-    hex: "#00A651",
-  },
-
-  {
-    name: "Opal Green",
-    code: "RAL-6026",
-    hex: "#007F7F",
-  },
-
-  {
-    name: "Mint Green",
-    code: "RAL-6029",
-    hex: "#008C3A",
-  },
-
-  {
-    name: "Signal Green",
-    code: "RAL-6032",
-    hex: "#00994D",
-  },
-
-  {
-    name: "Pure Green",
-    code: "RAL-6037",
-    hex: "#00A000",
-  },
-
-  {
-    name: "Silver Grey",
-    code: "RAL-7001",
-    hex: "#C8CCD1",
-  },
-
-  {
-    name: "Light Grey",
-    code: "RAL-7035",
-    hex: "#D6D6D0",
-  },
-
-  {
-    name: "Agate Grey",
-    code: "RAL-7038",
-    hex: "#B8B8B0",
-  },
-
-  {
-    name: "Window Grey",
-    code: "RAL-7040",
-    hex: "#BFC2C7",
-  },
-
-  {
-    name: "Traffic Grey A",
-    code: "RAL-7042",
-    hex: "#8F9499",
-  },
-
-  {
-    name: "Telegrey 1",
-    code: "RAL-7045",
-    hex: "#A8ADB4",
-  },
-
-  {
-    name: "Telegrey 4",
-    code: "RAL-7047",
-    hex: "#D0D0D0",
-  },
-
-  {
-    name: "Pure White",
-    code: "RAL-9010",
-    hex: "#F4F4EF",
-  },
-
-  {
-    name: "Cleanroom White",
-    code: "RAL-9016",
-    hex: "#F1F0E8",
-  },
-
-  {
-    name: "Traffic Black",
-    code: "RAL-9017",
-    hex: "#111111",
-  },
-
-  {
-    name: "Signal White",
-    code: "RAL-9003",
-    hex: "#F7F7F2",
-  },
-
-  {
-    name: "Papyrus White",
-    code: "RAL-9018",
-    hex: "#ECECE7",
-  },
+  ["RAL 9003", "Signal White", "#F4F4F4"],
+  ["RAL 9010", "Pure White", "#FDF4E3"],
+  ["RAL 9012", "Cleanroom", "#F5F5F5"],
+  ["RAL 9017", "Traffic Black", "#1E1E1E"],
+  ["RAL 9018", "Papyrus White", "#D7D7D0"],
 ];
-
 /* ================= DATA ================= */
 const categories = [
   {
     id: 1,
+
     name: "สีพื้นอุตสาหกรรม",
 
     items: [
       {
-        title: "สีทับหน้าอีพ็อกซี่ปรับระดับได้เอง",
-colors: [
-    "RAL-1001",
-"RAL-1013",
-"RAL-1014",
-"RAL-1015",
-"RAL-1028",
-"RAL-1032",
-"RAL-1034",
-"RAL-2000",
-"RAL-2004",
-"RAL-2008",
-"RAL-3000",
-"RAL-3002",
-"RAL-3003",
-"RAL-3015",
-"RAL-3017",
-"RAL-3020",
-"RAL-5005",
-"RAL-5007",
-"RAL-5010",
-"RAL-5012",
-"RAL-5015",
-"RAL-5017",
-"RAL-6001",
-"RAL-6002",
-"RAL-6010",
-"RAL-6018",
-"RAL-6019",
-"RAL-6024",
-"RAL-6026",
-"RAL-6029",
-"RAL-6032",
-"RAL-6037",
-"RAL-7001",
-"RAL-7035",
-"RAL-7038",
-"RAL-7040",
-"RAL-7042",
-"RAL-7045",
-"RAL-7047",
-"RAL-9010",
-"RAL-9016",
-"RAL-9017",
-"RAL-9003",
-"RAL-9018",
+        title: "EPOXY SELF-LEVELING สีทับหน้าอีพ็อกซี่ปรับระดับได้เอง",
+        colorChart: [
+   ["RAL 1001", "Beige", "#D2B48C"],
+  ["RAL 1013", "Oyster White", "#EAE6CA"],
+  ["RAL 1014", "Ivory", "#DDC49A"],
+  ["RAL 1015", "Light Ivory", "#E6D2B5"],
+
+  ["RAL 1028", "Melon Yellow", "#FF9E00"],
+  ["RAL 1032", "Broom Yellow", "#D6A200"],
+  ["RAL 1034", "Pastel Yellow", "#F4A900"],
+
+  ["RAL 2000", "Yellow Orange", "#DD7907"],
+  ["RAL 2004", "Pure Orange", "#E25303"],
+  ["RAL 2008", "Bright Red Orange", "#FF5E00"],
+
+  ["RAL 3000", "Flame Red", "#AF2B1E"],
+  ["RAL 3002", "Carmine Red", "#A52019"],
+  ["RAL 3003", "Ruby Red", "#8A1C1C"],
+  ["RAL 3015", "Light Pink", "#D8A0A6"],
+  ["RAL 3017", "Rose", "#E63244"],
+  ["RAL 3020", "Traffic Red", "#CC0605"],
+
+  ["RAL 5005", "Signal Blue", "#154889"],
+  ["RAL 5007", "Brilliant Blue", "#41678D"],
+  ["RAL 5010", "Gentian Blue", "#0E294B"],
+  ["RAL 5012", "Light Blue", "#2973B8"],
+  ["RAL 5015", "Sky Blue", "#007CB0"],
+  ["RAL 5017", "Traffic Blue", "#005B8C"],
+
+  ["RAL 6001", "Emerald Green", "#287233"],
+  ["RAL 6002", "Leaf Green", "#276235"],
+  ["RAL 6010", "Grass Green", "#4C9141"],
+  ["RAL 6018", "Yellow Green", "#57A639"],
+  ["RAL 6019", "Pastel Green", "#BDECB6"],
+  ["RAL 6024", "Traffic Green", "#308446"],
+  ["RAL 6026", "Opal Green", "#015D52"],
+  ["RAL 6029", "Mint Green", "#006F3C"],
+  ["RAL 6032", "Signal Green", "#1B8F4E"],
+  ["RAL 6037", "Pure Green", "#00A933"],
+
+  ["RAL 7001", "Silver Grey", "#8F999F"],
+  ["RAL 7035", "Light Grey", "#D7D7D7"],
+  ["RAL 7038", "Agate Grey", "#B5B8B1"],
+  ["RAL 7040", "Window Grey", "#9DA3A6"],
+  ["RAL 7042", "Traffic Grey A", "#8D948D"],
+  ["RAL 7045", "Telegrey 1", "#91969A"],
+  ["RAL 7047", "Telegrey 4", "#CFD0CF"],
+
+  ["RAL 9003", "Signal White", "#F4F4F4"],
+  ["RAL 9010", "Pure White", "#FDF4E3"],
+  ["RAL 9012", "Cleanroom", "#F5F5F5"],
+  ["RAL 9017", "Traffic Black", "#1E1E1E"],
+  ["RAL 9018", "Papyrus White", "#D7D7D0"],
   ],
+
         products: [
           {
             code: "RTP-S201",
-
+           images: [ img1, img2,img3, img4,],
             name: "สีอีพ็อกซี่ปรับระดับด้วยตัวเอง ชนิดใส",
   
             description:
               "RTP-S201 เป็นสีทับหน้าอีพ็อกซี่ 2 ส่วน ไม่มีส่วนผสมของตัวทำละลาย สามารถปรับระดับด้วยตัวเอง ใช้ในงานระบบพื้นอีพ็อกซี่ที่ต้องการใส เรียบ และไร้รอยต่อ",
 
+              
             usage: [
               "พิพิธภัณฑ์",
               "โรงแรม",
@@ -345,7 +154,7 @@ colors: [
 
           {
             code: "RTP-S300",
-
+          images: [ img1, img2,img3, img4,],
             name: "สีอีพ็อกซี่ปรับระดับด้วยตัวเอง อัตราส่วน 3 ต่อ 1",
 
             description:
@@ -463,61 +272,65 @@ colors: [
       },
 
      {
-  title: "สีเคลือบผิวอีพ็อกซี่",
-colors: [
-    "RAL-1001",
-"RAL-1013",
-"RAL-1014",
-"RAL-1015",
-"RAL-1028",
-"RAL-1032",
-"RAL-1034",
-"RAL-2000",
-"RAL-2004",
-"RAL-2008",
-"RAL-3000",
-"RAL-3002",
-"RAL-3003",
-"RAL-3015",
-"RAL-3017",
-"RAL-3020",
-"RAL-5005",
-"RAL-5007",
-"RAL-5010",
-"RAL-5012",
-"RAL-5015",
-"RAL-5017",
-"RAL-6001",
-"RAL-6002",
-"RAL-6010",
-"RAL-6018",
-"RAL-6019",
-"RAL-6024",
-"RAL-6026",
-"RAL-6029",
-"RAL-6032",
-"RAL-6037",
-"RAL-7001",
-"RAL-7035",
-"RAL-7038",
-"RAL-7040",
-"RAL-7042",
-"RAL-7045",
-"RAL-7047",
-"RAL-9010",
-"RAL-9016",
-"RAL-9017",
-"RAL-9003",
-"RAL-9018",
+  title: "EPOXY COATING  สีเคลือบผิวอีพ็อกซี่",
+colorChart: [
+   ["RAL 1001", "Beige", "#D2B48C"],
+  ["RAL 1013", "Oyster White", "#EAE6CA"],
+  ["RAL 1014", "Ivory", "#DDC49A"],
+  ["RAL 1015", "Light Ivory", "#E6D2B5"],
+
+  ["RAL 1028", "Melon Yellow", "#FF9E00"],
+  ["RAL 1032", "Broom Yellow", "#D6A200"],
+  ["RAL 1034", "Pastel Yellow", "#F4A900"],
+
+  ["RAL 2000", "Yellow Orange", "#DD7907"],
+  ["RAL 2004", "Pure Orange", "#E25303"],
+  ["RAL 2008", "Bright Red Orange", "#FF5E00"],
+
+  ["RAL 3000", "Flame Red", "#AF2B1E"],
+  ["RAL 3002", "Carmine Red", "#A52019"],
+  ["RAL 3003", "Ruby Red", "#8A1C1C"],
+  ["RAL 3015", "Light Pink", "#D8A0A6"],
+  ["RAL 3017", "Rose", "#E63244"],
+  ["RAL 3020", "Traffic Red", "#CC0605"],
+
+  ["RAL 5005", "Signal Blue", "#154889"],
+  ["RAL 5007", "Brilliant Blue", "#41678D"],
+  ["RAL 5010", "Gentian Blue", "#0E294B"],
+  ["RAL 5012", "Light Blue", "#2973B8"],
+  ["RAL 5015", "Sky Blue", "#007CB0"],
+  ["RAL 5017", "Traffic Blue", "#005B8C"],
+
+  ["RAL 6001", "Emerald Green", "#287233"],
+  ["RAL 6002", "Leaf Green", "#276235"],
+  ["RAL 6010", "Grass Green", "#4C9141"],
+  ["RAL 6018", "Yellow Green", "#57A639"],
+  ["RAL 6019", "Pastel Green", "#BDECB6"],
+  ["RAL 6024", "Traffic Green", "#308446"],
+  ["RAL 6026", "Opal Green", "#015D52"],
+  ["RAL 6029", "Mint Green", "#006F3C"],
+  ["RAL 6032", "Signal Green", "#1B8F4E"],
+  ["RAL 6037", "Pure Green", "#00A933"],
+
+  ["RAL 7001", "Silver Grey", "#8F999F"],
+  ["RAL 7035", "Light Grey", "#D7D7D7"],
+  ["RAL 7038", "Agate Grey", "#B5B8B1"],
+  ["RAL 7040", "Window Grey", "#9DA3A6"],
+  ["RAL 7042", "Traffic Grey A", "#8D948D"],
+  ["RAL 7045", "Telegrey 1", "#91969A"],
+  ["RAL 7047", "Telegrey 4", "#CFD0CF"],
+
+  ["RAL 9003", "Signal White", "#F4F4F4"],
+  ["RAL 9010", "Pure White", "#FDF4E3"],
+  ["RAL 9012", "Cleanroom", "#F5F5F5"],
+  ["RAL 9017", "Traffic Black", "#1E1E1E"],
+  ["RAL 9018", "Papyrus White", "#D7D7D0"],
   ],
   products: [
     {
       code: "RTP-R300",
 
       name: "สีเคลือบผิวอีพ็อกซี่ อัตราส่วน 3 ต่อ 1",
- 
-    
-
       description:
         "RTP-R300 เป็นสีทับหน้าอีพ็อกซี่ฟิล์มบาง 2 ส่วน ชนิดไม่มีตัวทำละลาย ใช้สำหรับงานพื้นคอนกรีตที่ใช้งานหนัก มีการยึดเกาะได้ดี และทนทานต่อสารเคมี",
 
@@ -582,52 +395,59 @@ colors: [
 },
 
     {
-  title: "สีเคลือบผิวโพลียูรีเทน",
-colors: [
-    "RAL-1001",
-"RAL-1013",
-"RAL-1014",
-"RAL-1015",
-"RAL-1028",
-"RAL-1032",
-"RAL-1034",
-"RAL-2000",
-"RAL-2004",
-"RAL-2008",
-"RAL-3000",
-"RAL-3002",
-"RAL-3003",
-"RAL-3015",
-"RAL-3017",
-"RAL-3020",
-"RAL-5005",
-"RAL-5007",
-"RAL-5010",
-"RAL-5012",
-"RAL-5015",
-"RAL-5017",
-"RAL-6001",
-"RAL-6002",
-"RAL-6010",
-"RAL-6018",
-"RAL-6019",
-"RAL-6024",
-"RAL-6026",
-"RAL-6029",
-"RAL-6032",
-"RAL-6037",
-"RAL-7001",
-"RAL-7035",
-"RAL-7038",
-"RAL-7040",
-"RAL-7042",
-"RAL-7045",
-"RAL-7047",
-"RAL-9010",
-"RAL-9016",
-"RAL-9017",
-"RAL-9003",
-"RAL-9018",
+  title: "POLYURETHANE COATING  สีเคลือบผิวโพลียูรีเทน",
+colorChart: [
+   ["RAL 1001", "Beige", "#D2B48C"],
+  ["RAL 1013", "Oyster White", "#EAE6CA"],
+  ["RAL 1014", "Ivory", "#DDC49A"],
+  ["RAL 1015", "Light Ivory", "#E6D2B5"],
+
+  ["RAL 1028", "Melon Yellow", "#FF9E00"],
+  ["RAL 1032", "Broom Yellow", "#D6A200"],
+  ["RAL 1034", "Pastel Yellow", "#F4A900"],
+
+  ["RAL 2000", "Yellow Orange", "#DD7907"],
+  ["RAL 2004", "Pure Orange", "#E25303"],
+  ["RAL 2008", "Bright Red Orange", "#FF5E00"],
+
+  ["RAL 3000", "Flame Red", "#AF2B1E"],
+  ["RAL 3002", "Carmine Red", "#A52019"],
+  ["RAL 3003", "Ruby Red", "#8A1C1C"],
+  ["RAL 3015", "Light Pink", "#D8A0A6"],
+  ["RAL 3017", "Rose", "#E63244"],
+  ["RAL 3020", "Traffic Red", "#CC0605"],
+
+  ["RAL 5005", "Signal Blue", "#154889"],
+  ["RAL 5007", "Brilliant Blue", "#41678D"],
+  ["RAL 5010", "Gentian Blue", "#0E294B"],
+  ["RAL 5012", "Light Blue", "#2973B8"],
+  ["RAL 5015", "Sky Blue", "#007CB0"],
+  ["RAL 5017", "Traffic Blue", "#005B8C"],
+
+  ["RAL 6001", "Emerald Green", "#287233"],
+  ["RAL 6002", "Leaf Green", "#276235"],
+  ["RAL 6010", "Grass Green", "#4C9141"],
+  ["RAL 6018", "Yellow Green", "#57A639"],
+  ["RAL 6019", "Pastel Green", "#BDECB6"],
+  ["RAL 6024", "Traffic Green", "#308446"],
+  ["RAL 6026", "Opal Green", "#015D52"],
+  ["RAL 6029", "Mint Green", "#006F3C"],
+  ["RAL 6032", "Signal Green", "#1B8F4E"],
+  ["RAL 6037", "Pure Green", "#00A933"],
+
+  ["RAL 7001", "Silver Grey", "#8F999F"],
+  ["RAL 7035", "Light Grey", "#D7D7D7"],
+  ["RAL 7038", "Agate Grey", "#B5B8B1"],
+  ["RAL 7040", "Window Grey", "#9DA3A6"],
+  ["RAL 7042", "Traffic Grey A", "#8D948D"],
+  ["RAL 7045", "Telegrey 1", "#91969A"],
+  ["RAL 7047", "Telegrey 4", "#CFD0CF"],
+
+  ["RAL 9003", "Signal White", "#F4F4F4"],
+  ["RAL 9010", "Pure White", "#FDF4E3"],
+  ["RAL 9012", "Cleanroom", "#F5F5F5"],
+  ["RAL 9017", "Traffic Black", "#1E1E1E"],
+  ["RAL 9018", "Papyrus White", "#D7D7D0"],
   ],
   products: [
     {
@@ -702,54 +522,258 @@ colors: [
   ],
 },
 
+      {
+  title: "POLYURETHANE SCREED สีพียูสกรีต",
+   colorChart: [
+   ["RAL 1001", "Beige", "#D2B48C"],
+  ["RAL 1013", "Oyster White", "#EAE6CA"],
+  ["RAL 1014", "Ivory", "#DDC49A"],
+  ["RAL 1015", "Light Ivory", "#E6D2B5"],
+
+  ["RAL 1028", "Melon Yellow", "#FF9E00"],
+  ["RAL 1032", "Broom Yellow", "#D6A200"],
+  ["RAL 1034", "Pastel Yellow", "#F4A900"],
+
+  ["RAL 2000", "Yellow Orange", "#DD7907"],
+  ["RAL 2004", "Pure Orange", "#E25303"],
+  ["RAL 2008", "Bright Red Orange", "#FF5E00"],
+
+  ["RAL 3000", "Flame Red", "#AF2B1E"],
+  ["RAL 3002", "Carmine Red", "#A52019"],
+  ["RAL 3003", "Ruby Red", "#8A1C1C"],
+  ["RAL 3015", "Light Pink", "#D8A0A6"],
+  ["RAL 3017", "Rose", "#E63244"],
+  ["RAL 3020", "Traffic Red", "#CC0605"],
+
+  ["RAL 5005", "Signal Blue", "#154889"],
+  ["RAL 5007", "Brilliant Blue", "#41678D"],
+  ["RAL 5010", "Gentian Blue", "#0E294B"],
+  ["RAL 5012", "Light Blue", "#2973B8"],
+  ["RAL 5015", "Sky Blue", "#007CB0"],
+  ["RAL 5017", "Traffic Blue", "#005B8C"],
+
+  ["RAL 6001", "Emerald Green", "#287233"],
+  ["RAL 6002", "Leaf Green", "#276235"],
+  ["RAL 6010", "Grass Green", "#4C9141"],
+  ["RAL 6018", "Yellow Green", "#57A639"],
+  ["RAL 6019", "Pastel Green", "#BDECB6"],
+  ["RAL 6024", "Traffic Green", "#308446"],
+  ["RAL 6026", "Opal Green", "#015D52"],
+  ["RAL 6029", "Mint Green", "#006F3C"],
+  ["RAL 6032", "Signal Green", "#1B8F4E"],
+  ["RAL 6037", "Pure Green", "#00A933"],
+
+  ["RAL 7001", "Silver Grey", "#8F999F"],
+  ["RAL 7035", "Light Grey", "#D7D7D7"],
+  ["RAL 7038", "Agate Grey", "#B5B8B1"],
+  ["RAL 7040", "Window Grey", "#9DA3A6"],
+  ["RAL 7042", "Traffic Grey A", "#8D948D"],
+  ["RAL 7045", "Telegrey 1", "#91969A"],
+  ["RAL 7047", "Telegrey 4", "#CFD0CF"],
+
+  ["RAL 9003", "Signal White", "#F4F4F4"],
+  ["RAL 9010", "Pure White", "#FDF4E3"],
+  ["RAL 9012", "Cleanroom", "#F5F5F5"],
+  ["RAL 9017", "Traffic Black", "#1E1E1E"],
+  ["RAL 9018", "Papyrus White", "#D7D7D0"],
+  ],
+showPUS: true,
+  products: [
+    {
+      code: "RTP-R500",
+
+      name: "สีโพลียูรีเทน ชนิดความเงาสูง สำหรับงานภายนอก",
+
+
+      description:
+        "RTP-R500 เป็นสีทับหน้าโพลียูรีเทน 2 ส่วน มีตัวทำละลาย ชนิดความเงาสูง ใช้สำหรับงานพื้นคอนกรีตที่ต้องการพื้นที่เงา สามารถใช้งานภายนอกได้ มีการยึดเกาะได้ดี และทนทานต่อสารเคมี",
+
+      usage: [
+        "โรงงาน",
+        "พิพิธภัณฑ์",
+        "โรงแรม",
+      ],
+
+      coverage: "0.11 – 0.17 กก./ตร.ม @50 – 75 ไมครอน",
+
+      package: [
+        "20 กก./ชุด (ส่วน A = 16 กก / ส่วน B = 4 กก)",
+        "4 กก./ชุด (ส่วน A = 3.2 กก / ส่วน B = 0.8 กก)",
+      ],
+    },
+
+    {
+      code: "RTP-R501",
+
+      name: "สีโพลียูรีเทน ชนิดด้าน สำหรับงานภายนอก",
+
+
+      description:
+        "RTP-R501 เป็นสีทับหน้าโพลียูรีเทน 2 ส่วน มีตัวทำละลาย ชนิดด้าน ใช้สำหรับงานพื้นคอนกรีตที่ต้องการพื้นที่ด้าน สามารถใช้งานภายนอกได้ มีการยึดเกาะได้ดี และทนทานต่อสารเคมี",
+
+      usage: [
+        "โรงงาน",
+        "พิพิธภัณฑ์",
+        "โรงแรม",
+      ],
+
+      coverage: "0.11 – 0.17 กก./ตร.ม @50 – 75 ไมครอน",
+
+      package: [
+        "20 กก./ชุด (ส่วน A = 16 กก / ส่วน B = 4 กก)",
+        "4 กก./ชุด (ส่วน A = 3.2 กก / ส่วน B = 0.8 กก)",
+      ],
+    },
+
+    {
+      code: "RTP-R502",
+
+      name: "สีโพลียูรีเทน สำหรับงานภายใน",
+
+  
+
+      description:
+        "RTP-R502 เป็นสีทับหน้าโพลียูรีเทน 2 ส่วน มีตัวทำละลาย ใช้สำหรับงานพื้นคอนกรีตที่ต้องการพื้นที่เงา สามารถใช้งานภายใน มีการยึดเกาะได้ดี และทนทานต่อสารเคมี",
+
+      usage: [
+        "โรงงาน",
+        "พิพิธภัณฑ์",
+        "โรงแรม",
+      ],
+
+      coverage: "0.11 – 0.17 กก./ตร.ม @50 – 75 ไมครอน",
+
+      package: [
+        "20 กก./ชุด (ส่วน A = 16 กก / ส่วน B = 4 กก)",
+        "4 กก./ชุด (ส่วน A = 3.2 กก / ส่วน B = 0.8 กก)",
+      ],
+    },
+  ],
+},
+     {
+  title: " Anti-static Epoxy สีป้องกันไฟฟ้าสถิต",
+ colorChart: [
+   ["RAL 1001", "Beige", "#D2B48C"],
+  ["RAL 1013", "Oyster White", "#EAE6CA"],
+  ["RAL 1014", "Ivory", "#DDC49A"],
+  ["RAL 1015", "Light Ivory", "#E6D2B5"],
+
+  ["RAL 1028", "Melon Yellow", "#FF9E00"],
+  ["RAL 1032", "Broom Yellow", "#D6A200"],
+  ["RAL 1034", "Pastel Yellow", "#F4A900"],
+
+  ["RAL 2000", "Yellow Orange", "#DD7907"],
+  ["RAL 2004", "Pure Orange", "#E25303"],
+  ["RAL 2008", "Bright Red Orange", "#FF5E00"],
+
+  ["RAL 3000", "Flame Red", "#AF2B1E"],
+  ["RAL 3002", "Carmine Red", "#A52019"],
+  ["RAL 3003", "Ruby Red", "#8A1C1C"],
+  ["RAL 3015", "Light Pink", "#D8A0A6"],
+  ["RAL 3017", "Rose", "#E63244"],
+  ["RAL 3020", "Traffic Red", "#CC0605"],
+
+  ["RAL 5005", "Signal Blue", "#154889"],
+  ["RAL 5007", "Brilliant Blue", "#41678D"],
+  ["RAL 5010", "Gentian Blue", "#0E294B"],
+  ["RAL 5012", "Light Blue", "#2973B8"],
+  ["RAL 5015", "Sky Blue", "#007CB0"],
+  ["RAL 5017", "Traffic Blue", "#005B8C"],
+
+  ["RAL 6001", "Emerald Green", "#287233"],
+  ["RAL 6002", "Leaf Green", "#276235"],
+  ["RAL 6010", "Grass Green", "#4C9141"],
+  ["RAL 6018", "Yellow Green", "#57A639"],
+  ["RAL 6019", "Pastel Green", "#BDECB6"],
+  ["RAL 6024", "Traffic Green", "#308446"],
+  ["RAL 6026", "Opal Green", "#015D52"],
+  ["RAL 6029", "Mint Green", "#006F3C"],
+  ["RAL 6032", "Signal Green", "#1B8F4E"],
+  ["RAL 6037", "Pure Green", "#00A933"],
+
+  ["RAL 7001", "Silver Grey", "#8F999F"],
+  ["RAL 7035", "Light Grey", "#D7D7D7"],
+  ["RAL 7038", "Agate Grey", "#B5B8B1"],
+  ["RAL 7040", "Window Grey", "#9DA3A6"],
+  ["RAL 7042", "Traffic Grey A", "#8D948D"],
+  ["RAL 7045", "Telegrey 1", "#91969A"],
+  ["RAL 7047", "Telegrey 4", "#CFD0CF"],
+
+  ["RAL 9003", "Signal White", "#F4F4F4"],
+  ["RAL 9010", "Pure White", "#FDF4E3"],
+  ["RAL 9012", "Cleanroom", "#F5F5F5"],
+  ["RAL 9017", "Traffic Black", "#1E1E1E"],
+  ["RAL 9018", "Papyrus White", "#D7D7D0"],
+  ],
+  showESD: true,
+  products: [
+    {
+      code: "RTP-R341",
+
+      name: "สีเคลือบผิวอีพ็อกซี่ 2 ส่วน ชนิดป้องกันไฟฟ้าสถิต",
+
+      description:
+        "RTP-R341 เป็นสีเคลือบผิวอีพ็อกซี่ 2 ส่วน ชนิดป้องกันไฟฟ้าสถิต มีตัวทําละลายมีค่าความต้านทานไฟฟ้าอยู่ในช่วง 105-109โอห์มมีสมบัติการถ่ายเทประจุไฟฟ้าได้ฟิล์มบางผิวเรียบความเงาสูงไร้รอยต่อมีการยึดเกาะดีและทนทานต่อสารเคมีทั่วไปได้ ",
+      usage: [
+        "รองพื้นคอนกรีต",
+        "ปรับระดับพื้นผิวคอนกรีต",
+      ],
+
+      coverage:[ "ขึ้นกับการใช้งาน",  ],
+
+      package: [
+        "4 กก./ชุด (ส่วน A = 3.2 กก., ส่วน B = 8 กก.)",
+        "20 กก./ชุด (ส่วน A = 16 กก., ส่วน B = 4 กก.) ",
+      ],
+    },
+
+    {
+      code: "RTP-S340 ",
+      name: "สีทับหน้าอีพ็อกซี่ปรับระดับได้เอง ชนิดป้องกันไฟฟ้าสถิต",
+      description:
+        "RTP-S340   เป็นสีทับหน้าอีพ็อกซี่ 2 ส่วน ชนิดป้องกันไฟฟ้ าสถิต สามารถปรับระดับได้ด้วยตัวเอง ใช้งานง่าย ไม่มีกลิ่นฉุนมีค่าความต้านทานไฟฟ้าอยู่ในช่วง 106-109โอห์มมีสมบัติการถ่ายเทประจุไฟฟ้าได้นอกจากนี้ยังมีสมบัติเชิงกลดี มีความเงาสูง ผิวเรียบ และไร้รอยต่อ  ",
+      usage: [
+        "รองพื้นคอนกรีต",
+        "ปรับระดับพื้นผิวคอนกรีต",
+      ],
+      coverage:[ "ขึ้นกับการใช้งาน",  ],
+      package: [
+        "4 กก./ชุด (ส่วน A = 3.2 กก., ส่วน B = 0.8 กก.)",
+        "20 กก./ชุด (ส่วน A = 16 กก., ส่วน B = 4 กก.) ",
+      ],
+    },
+        {
+      code: "RTP-PUMF(GE) ",
+      name: "สีทับหน้าโพลียูรีเทนคอนกรีต 3 ส่วน",
+      description:
+        "RTP– PUESD เป็นสีทับหน้าโพลียูรีเทนคอนกรีต 3 ส่วน ชนิดป้องกันไฟฟ้าสถิตซึ่งมีความค่าความต้านทานไฟฟ้า 106– 109 Ω มีสมบัติการถ่ายเทประจุไฟฟ้าได้ดีนอกจากนี้ยังมีสมบัติเชิงกลและการยึดเกาะที่ดี ",
+      usage: [
+        "รองพื้นคอนกรีต",
+        "ปรับระดับพื้นผิวคอนกรีต",
+      ],
+      coverage:[ "ขึ้นกับการใช้งาน",  ],
+      package: [
+        "13 กก./ชุด (ส่วน A = 3 กก. , ส่วน B = 3 กก., ส่วน C = 7 กก)",
+      ],
+    },
+        {
+      code: "RTP-S341",
+      name: "สีทับหน้าอีพ็อกซี่ปรับระดับ 2 ส่วน",
+      description:
+        "RTP-S341 เป็นสีทับหน้าอีพ็อกซี่ปรับระดับ 2 ส่วน ชนิดนำไฟฟ้าได้ ซึ่งมีค่านำไฟฟ้าอยู่ในช่วง 104– 106 Ω มีสมบัติการถ่ายเทประจุไฟฟ้าได้ดี นอกจากนี้ยังมีเชิงกลและการยึดเกาะที่ดี ",
+      usage: [
+        "รองพื้นคอนกรีต",
+        "ปรับระดับพื้นผิวคอนกรีต",
+      ],
+      coverage:[ "ขึ้นกับการใช้งาน",  ],
+      package: [
+        "20 กก./ชุด (ส่วน A = 16 กก. , ส่วน B = 4 กก.)"
+      ],
+    },
+  ],
+},
      {
   title: "สีเคลือบผิวอะครีลิค",
-colors: [
-    "RAL-1001",
-"RAL-1013",
-"RAL-1014",
-"RAL-1015",
-"RAL-1028",
-"RAL-1032",
-"RAL-1034",
-"RAL-2000",
-"RAL-2004",
-"RAL-2008",
-"RAL-3000",
-"RAL-3002",
-"RAL-3003",
-"RAL-3015",
-"RAL-3017",
-"RAL-3020",
-"RAL-5005",
-"RAL-5007",
-"RAL-5010",
-"RAL-5012",
-"RAL-5015",
-"RAL-5017",
-"RAL-6001",
-"RAL-6002",
-"RAL-6010",
-"RAL-6018",
-"RAL-6019",
-"RAL-6024",
-"RAL-6026",
-"RAL-6029",
-"RAL-6032",
-"RAL-6037",
-"RAL-7001",
-"RAL-7035",
-"RAL-7038",
-"RAL-7040",
-"RAL-7042",
-"RAL-7045",
-"RAL-7047",
-"RAL-9010",
-"RAL-9016",
-"RAL-9017",
-"RAL-9003",
-"RAL-9018",
-  ],
   products: [
     {
       code: "RTP-R100",
@@ -797,52 +821,7 @@ colors: [
 
       {
   title: "รองพื้นอีพ็อกซี่",
-colors: [
-    "RAL-1001",
-"RAL-1013",
-"RAL-1014",
-"RAL-1015",
-"RAL-1028",
-"RAL-1032",
-"RAL-1034",
-"RAL-2000",
-"RAL-2004",
-"RAL-2008",
-"RAL-3000",
-"RAL-3002",
-"RAL-3003",
-"RAL-3015",
-"RAL-3017",
-"RAL-3020",
-"RAL-5005",
-"RAL-5007",
-"RAL-5010",
-"RAL-5012",
-"RAL-5015",
-"RAL-5017",
-"RAL-6001",
-"RAL-6002",
-"RAL-6010",
-"RAL-6018",
-"RAL-6019",
-"RAL-6024",
-"RAL-6026",
-"RAL-6029",
-"RAL-6032",
-"RAL-6037",
-"RAL-7001",
-"RAL-7035",
-"RAL-7038",
-"RAL-7040",
-"RAL-7042",
-"RAL-7045",
-"RAL-7047",
-"RAL-9010",
-"RAL-9016",
-"RAL-9017",
-"RAL-9003",
-"RAL-9018",
-  ],
+
   products: [
     {
       code: "RTP-P100",
@@ -890,58 +869,13 @@ colors: [
 },
 
      {
-  title: "อีพ็อกซีมอต้าร์",
-colors: [
-    "RAL-1001",
-"RAL-1013",
-"RAL-1014",
-"RAL-1015",
-"RAL-1028",
-"RAL-1032",
-"RAL-1034",
-"RAL-2000",
-"RAL-2004",
-"RAL-2008",
-"RAL-3000",
-"RAL-3002",
-"RAL-3003",
-"RAL-3015",
-"RAL-3017",
-"RAL-3020",
-"RAL-5005",
-"RAL-5007",
-"RAL-5010",
-"RAL-5012",
-"RAL-5015",
-"RAL-5017",
-"RAL-6001",
-"RAL-6002",
-"RAL-6010",
-"RAL-6018",
-"RAL-6019",
-"RAL-6024",
-"RAL-6026",
-"RAL-6029",
-"RAL-6032",
-"RAL-6037",
-"RAL-7001",
-"RAL-7035",
-"RAL-7038",
-"RAL-7040",
-"RAL-7042",
-"RAL-7045",
-"RAL-7047",
-"RAL-9010",
-"RAL-9016",
-"RAL-9017",
-"RAL-9003",
-"RAL-9018",
-  ],
+  title: "มอต้าร์",
+
   products: [
     {
       code: "RTP-M101",
 
-      name: "อีพ็อกซี่มอร์ต้า",
+      name: "มอร์ต้า",
 
 
 
@@ -965,58 +899,13 @@ colors: [
 },
 
       {
-  title: "อีพ็อกซี่บล็อกความชื้น",
-colors: [
-    "RAL-1001",
-"RAL-1013",
-"RAL-1014",
-"RAL-1015",
-"RAL-1028",
-"RAL-1032",
-"RAL-1034",
-"RAL-2000",
-"RAL-2004",
-"RAL-2008",
-"RAL-3000",
-"RAL-3002",
-"RAL-3003",
-"RAL-3015",
-"RAL-3017",
-"RAL-3020",
-"RAL-5005",
-"RAL-5007",
-"RAL-5010",
-"RAL-5012",
-"RAL-5015",
-"RAL-5017",
-"RAL-6001",
-"RAL-6002",
-"RAL-6010",
-"RAL-6018",
-"RAL-6019",
-"RAL-6024",
-"RAL-6026",
-"RAL-6029",
-"RAL-6032",
-"RAL-6037",
-"RAL-7001",
-"RAL-7035",
-"RAL-7038",
-"RAL-7040",
-"RAL-7042",
-"RAL-7045",
-"RAL-7047",
-"RAL-9010",
-"RAL-9016",
-"RAL-9017",
-"RAL-9003",
-"RAL-9018",
-  ],
+  title: "บล็อกความชื้น",
+
   products: [
     {
       code: "RTP-C100",
 
-      name: "อีพ็อกซี่ซีเมนต์สำหรับป้องกันความชื้น",
+      name: "ซีเมนต์สำหรับป้องกันความชื้น",
 
   
 
@@ -1047,52 +936,6 @@ colors: [
     items: [
      {
   title: "สีรองพื้นกันสนิม",
-colors: [
-    "RAL-1001",
-"RAL-1013",
-"RAL-1014",
-"RAL-1015",
-"RAL-1028",
-"RAL-1032",
-"RAL-1034",
-"RAL-2000",
-"RAL-2004",
-"RAL-2008",
-"RAL-3000",
-"RAL-3002",
-"RAL-3003",
-"RAL-3015",
-"RAL-3017",
-"RAL-3020",
-"RAL-5005",
-"RAL-5007",
-"RAL-5010",
-"RAL-5012",
-"RAL-5015",
-"RAL-5017",
-"RAL-6001",
-"RAL-6002",
-"RAL-6010",
-"RAL-6018",
-"RAL-6019",
-"RAL-6024",
-"RAL-6026",
-"RAL-6029",
-"RAL-6032",
-"RAL-6037",
-"RAL-7001",
-"RAL-7035",
-"RAL-7038",
-"RAL-7040",
-"RAL-7042",
-"RAL-7045",
-"RAL-7047",
-"RAL-9010",
-"RAL-9016",
-"RAL-9017",
-"RAL-9003",
-"RAL-9018",
-  ],
   products: [
     {
       code: "RTP-P500",
@@ -1169,52 +1012,7 @@ colors: [
 
      {
   title: "สีอัลคิด",
-colors: [
-    "RAL-1001",
-"RAL-1013",
-"RAL-1014",
-"RAL-1015",
-"RAL-1028",
-"RAL-1032",
-"RAL-1034",
-"RAL-2000",
-"RAL-2004",
-"RAL-2008",
-"RAL-3000",
-"RAL-3002",
-"RAL-3003",
-"RAL-3015",
-"RAL-3017",
-"RAL-3020",
-"RAL-5005",
-"RAL-5007",
-"RAL-5010",
-"RAL-5012",
-"RAL-5015",
-"RAL-5017",
-"RAL-6001",
-"RAL-6002",
-"RAL-6010",
-"RAL-6018",
-"RAL-6019",
-"RAL-6024",
-"RAL-6026",
-"RAL-6029",
-"RAL-6032",
-"RAL-6037",
-"RAL-7001",
-"RAL-7035",
-"RAL-7038",
-"RAL-7040",
-"RAL-7042",
-"RAL-7045",
-"RAL-7047",
-"RAL-9010",
-"RAL-9016",
-"RAL-9017",
-"RAL-9003",
-"RAL-9018",
-  ],
+
   products: [
     {
       code: "RTP-E100",
@@ -1447,9 +1245,71 @@ colors: [
 },
     ],
   },
-
   {
     id: 5,
+    name: "สีสนามกีฬา",
+
+    items: [
+      {
+  title: "สีสนามกีฬา",
+
+  products: [
+    {
+      code: "RTP-W503",
+
+      name: "สีโพลียูเรีย-ยูรีเทน ",
+
+      description:
+        "RTP-W503  เป็นยางกันรั่วซึมโพลียูเรีย-ยูรีเทน 2 ส่วน มีความแข็งมากกว่า 50 shore A และค่าการยืดตัวที่สูงกว่า 500 % นอกจากนี้ มีสมบัติทางไดนามิคและเชิงกลที่ดีเยี่ยมและทนทานต่อสภาวะแวดล้อมได้ดี เหมาะสำหรับนำไปใช้เป็นพื้นดาดฟ้า  ",
+
+      usage: [
+        "ดาดฟ้า",
+        "หลังคา",
+        "ระเบียง",
+        "พื้นที่กันรั่วซึม",
+      ],
+
+      coverage: "0.15 – 0.19 กก./ตร.ม. @80 – 100 ไมครอน",     
+
+      package: [
+        "20 กก./ชุด (ส่วน A = 10 กก. , ส่วน B = 10 กก.)"  
+      ],
+    },
+  ],
+},
+
+     {
+  title: "สีสนามกีฬา",
+
+  products: [
+    {
+      code: "RTP-R900",
+
+      name: "สีกันรั่วซึมโพลียูรีเทนความยืดหยุ่นสูง",
+
+      description:
+        "RTP-R900 เป็นสีกันรั่วซึมโพลียูรีเทน 2 ส่วน สูตรน้ำ เป็นมิตรต่อสิ่งแวดล้อม เหมาะสำหรับระบบกันซึมที่ต้องการฟิล์มบาง มีความยืดหยุ่นสูง แข็งแรง และทนทานต่อสภาพอากาศต่าง ๆ",
+
+      usage: [
+        "ดาดฟ้า",
+        "หลังคา",
+        "ระเบียง",
+        "พื้นที่กันรั่วซึม",
+      ],
+
+      coverage: "0.2 – 0.4 กก./ตร.ม. @ กลิ้ง 1 รอบ",
+
+      package: [
+        "20 กก./ชุด (ส่วน A = 19.5 กก. / ส่วน B = 0.5 กก.)",
+      ],
+    },
+  ],
+},
+    ],
+  },
+
+  {
+    id: 6,
     name: "สีเฉพาะทาง",
 
     items: [
@@ -1534,19 +1394,47 @@ colors: [
     },
   ],
 },
+
     ],
   },
 ];
 
 export default function Products() {
- const [active, setActive] = useState(1);
-const [selectedItem, setSelectedItem] = useState(null);
-const [selectedColor, setSelectedColor] = useState(palettes[0]);
+  const [active, setActive] = useState(1);
+  const [selectedItem, setSelectedItem] = useState(null);
 
-const detailRef = useRef(null);
+  const detailRef = useRef(null);
 
-const current = categories.find((c) => c.id === active);
+  const current = categories.find((c) => c.id === active);
+  const pusColors = [
+  ["PUS-Black-01", "#0F0F0F", "#2E2E2E"],
+  ["PUS-Grey-01", "#DDD3B3", "#E7DFC4"],
+  ["PUS-Grey-02", "#D4D4CF", "#DDDDD8"],
+  ["PUS-Grey-03", "#C8C8C4", "#D2D2CE"],
+  ["PUS-Grey-04", "#A8A5A4", "#B6B3B2"],
+  ["PUS-Grey-05", "#D9D5C8", "#E6E1D3"],
+  ["PUS-Grey-06", "#8D9091", "#A1A4A5"],
+  ["PUS-Green-01", "#8DA770", "#A8C18B"],
+  ["PUS-Green-02", "#55763A", "#6B8E4A"],
+  ["PUS-Green-03", "#7ADBCF", "#9DE9DE"],
+  ["PUS-Green-04", "#4EA996", "#63B8A7"],
+  ["PUS-Blue-01", "#2D78B7", "#4A95D2"],
 
+  ["PUS-Blue-02", "#3394C1", "#5FAFD8"],
+  ["PUS-Blue-03", "#1376B9", "#3D93D2"],
+  ["PUS-Blue-04", "#224EA7", "#3A67C6"],
+
+  ["PUS-Cream-01", "#F1E3B4", "#F5EBC8"],
+  ["PUS-Cream-02", "#F0D898", "#F5E7B8"],
+
+  ["PUS-Yellow-01", "#F09A07", "#FFC31A"],
+  ["PUS-Yellow-06", "#E18214", "#F0A12B"],
+
+  ["PUS-Red-01", "#6B3428", "#8A4638"],
+  ["PUS-Red-02", "#E0829C", "#F2A6BC"],
+  ["PUS-Red-03", "#D6323D", "#F04A59"],
+  ["PUS-Red-04", "#B62D24", "#D94842"],
+];
   return (
     <div className="min-h-screen bg-black text-white px-6 py-16">
 
@@ -1590,17 +1478,15 @@ const current = categories.find((c) => c.id === active);
  <div
   key={i}
   onClick={() => {
-    setSelectedItem(item);
-    setSelectedColor(palettes[0]);
+  setSelectedItem(item);
 
-    setTimeout(() => {
-      detailRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 100);
-  }}
-
+  setTimeout(() => {
+    detailRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, 100);
+}}
   className={`
     bg-black/40 p-4 rounded-xl border transition-all duration-300
     hover:border-orange-500 hover:translate-x-1 cursor-pointer
@@ -1624,79 +1510,161 @@ const current = categories.find((c) => c.id === active);
 ))}
         </div>
 
+        </div>
+        
+{/* RAL COLOR CATALOG */}
+<div className="max-w-6xl mx-auto my-12">
+
+  <div className="bg-[#111] rounded-3xl border border-orange-500/20 overflow-hidden">
+
+    <div className="p-6 border-b border-orange-500/10">
+
+      <h2 className="text-3xl font-bold text-orange-500">
+        เฉดสีมาตรฐาน RAL
+      </h2>
+
+      <p className="text-neutral-400 mt-2">
+        รองรับการผลิตและผสมสีตามมาตรฐาน RAL สำหรับงานอุตสาหกรรม
+      </p>
+
+    </div>
+
+   <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-3">
+
+{selectedItem?.colorChart?.map(([ral, name, hex], index) => (
+  <div
+    key={index}
+    className="
+      group
+      relative
+      cursor-pointer
+      transition-all
+      duration-300
+      hover:scale-110
+      hover:z-20
+    "
+  >
+    {/* สี */}
+    <div
+      className="
+        h-16
+        rounded-lg
+        border
+        border-white/10
+        shadow-lg
+      "
+     style={{
+  backgroundColor: hex,
+}}
+    />
+
+    {/* รหัสสี */}
+    <p className="text-[10px] text-center text-gray-300 mt-1">
+      {ral}
+    </p>
+
+    {/* Hover */}
+    <div
+      className="
+        absolute
+        bottom-full
+        left-1/2
+        -translate-x-1/2
+        mb-2
+        opacity-0
+        group-hover:opacity-100
+        transition-all
+        duration-300
+        bg-black
+        border
+        border-orange-500/30
+        rounded-lg
+        px-3
+        py-2
+        whitespace-nowrap
+        shadow-xl
+      "
+    >
+      <p className="text-orange-400 font-bold text-xs">
+        {ral}
+      </p>
+
+      <p className="text-white text-xs">
+        {name}
+      </p>
+    </div>
+  </div>
+))}
+</div>
+
+  </div>
+
+
+</div>
+{selectedItem?.showESD && (
+  <div className="max-w-6xl mx-auto mb-12 bg-[#111] rounded-3xl border border-orange-500/20 p-6">
+
+    <h3 className="text-center text-orange-500 font-bold text-xl mb-6">
+      POLYURETHANE ELECTROSTATIC DISSIPATIVE
+    </h3>
+
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+      <div>
+        <div className="h-14 rounded-lg bg-[#462F27]" />
+        <p className="text-center text-xs mt-2">PUESD-Red</p>
       </div>
 
-      {/* COLOR SELECTOR */}
-      {selectedItem && (
-        <>
-          <div className="flex flex-col items-center mt-10 mb-10">
+      <div>
+        <div className="h-14 rounded-lg bg-[#646665]" />
+        <p className="text-center text-xs mt-2">PUESD-Grey</p>
+      </div>
 
-           <p className="text-neutral-400 mb-3">
-  เลือกเฉดสีสำหรับ: 
-  <span className="text-orange-500 ml-2 font-bold">
-    {selectedItem?.title}
-  </span>
-</p>
+      <div>
+        <div className="h-14 rounded-lg bg-[#484941]" />
+        <p className="text-center text-xs mt-2">PUESD-Dark Grey</p>
+      </div>
 
-            <div className="flex gap-3 flex-wrap justify-center">
-            {palettes
-  .filter((color) =>
-    selectedItem?.colors?.includes(color.code)
-  )
-  .map((color, i) => (
-                <button
-                  key={i}
-                  onClick={() => setSelectedColor(color)}
-                  className={`
-  w-[180px] h-[52px]
-  flex items-center gap-2 px-4 py-2 rounded-xl border transition
-  justify-start
-                    ${
-                      selectedColor.hex === color.hex
-                        ? "border-orange-500 scale-105"
-                        : "border-white/20"
-                    }
-                  `}
-                >
-                  <div
-                    className="w-5 h-5 rounded-full border"
-                    style={{ backgroundColor: color.hex }}
-                  />
+      <div>
+        <div className="h-14 rounded-lg bg-[#393F2D]" />
+        <p className="text-center text-xs mt-2">PUESD-Green</p>
+      </div>
 
-                  <span className="text-sm truncate">
-  {color.name}
-</span>
-                </button>
-              ))}
-            </div>
+      <div>
+        <div className="h-14 rounded-lg bg-[#48544A]" />
+        <p className="text-center text-xs mt-2">PUESD-Dark Green</p>
+      </div>
+    </div>
 
-          </div>
+  </div>
+)}
+{selectedItem?.showPUS && (
+  <div className="max-w-6xl mx-auto mb-12 bg-[#111] rounded-3xl border border-orange-500/20 p-6">
 
-          {/* SELECTED COLOR PREVIEW */}
-          <div className="flex justify-center mb-10">
+    <h3 className="text-center text-orange-500 font-bold text-xl mb-6">
+      POLYURETHANE SCREED
+    </h3>
 
-            <div className="flex items-center gap-4 bg-[#111] px-6 py-4 rounded-2xl border border-orange-500/20">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-              <div
-                className="w-10 h-10 rounded-xl border"
-                style={{ backgroundColor: selectedColor.hex }}
-              />
+      {pusColors.map(([code, left, right], index) => (
+        <div key={index}>
+          <div
+            className="h-14 rounded-lg border border-white/10"
+            style={{
+              background: `linear-gradient(to right, ${left} 50%, ${right} 50%)`,
+            }}
+          />
 
-              <div>
-                <p className="text-white font-bold">
-                  สีที่เลือก: {selectedColor.name}
-                </p>
+          <p className="text-center text-xs mt-2">
+            {code}
+          </p>
+        </div>
+      ))}
 
-                <p className="text-neutral-400 text-sm">
-                  {selectedColor.code}
-                </p>
-              </div>
+    </div>
 
-            </div>
-
-          </div>
-        </>
-      )}
+  </div>
+)}
 {/* PRODUCTS */}
 {selectedItem?.products?.length > 0 && (
   <div
@@ -1725,30 +1693,32 @@ const current = categories.find((c) => c.id === active);
         >
 
           {/* IMAGE */}
-          <div className="h-[260px] bg-black flex items-center justify-center p-6 border-b border-orange-500/10">
+         <div className="h-[380px] bg-black flex items-center justify-center p-4 border-b border-orange-500/10">
 
-            <div
-              className="w-full h-full rounded-2xl shadow-2xl transition-all duration-500"
-              style={{
-                backgroundColor: selectedColor.hex,
-              }}
-            >
+            <div className="w-full h-full rounded-2xl bg-neutral-900 shadow-2xl transition-all duration-500">
 
               {/* ถังสินค้า */}
               <div className="w-full h-full flex items-center justify-center">
 
-                {product.image && (
-  <img
-    src={product.image}
-    alt={product.name}
-    className="
-      max-h-[220px]
-      object-contain
-      drop-shadow-[0_15px_30px_rgba(0,0,0,0.45)]
-    "
-  />
+            {product.images && (
+ <Swiper
+  modules={[Navigation, Pagination]}
+  navigation
+  pagination={{ clickable: true }}
+  loop
+  className="w-full h-[340px]"
+>
+    {product.images.map((image, index) => (
+      <SwiperSlide key={index}>
+       <img
+  src={image}
+  alt={`${product.code}-${index}`}
+  className="w-full h-[340px] object-cover rounded-xl"
+/>
+      </SwiperSlide>
+    ))}
+  </Swiper>
 )}
-
               </div>
 
             </div>
@@ -1763,13 +1733,6 @@ const current = categories.find((c) => c.id === active);
               <p className="text-orange-500 font-black text-lg">
                 {product.code}
               </p>
-
-              <div
-                className="w-7 h-7 rounded-full border border-white/20"
-                style={{
-                  backgroundColor: selectedColor.hex,
-                }}
-              />
 
             </div>
 
@@ -1787,7 +1750,36 @@ const current = categories.find((c) => c.id === active);
               <p className="text-orange-400 font-bold mb-2">
                 การนำไปใช้
               </p>
+{/* COLOR OPTIONS */}
+<div className="mb-5">
 
+  <p className="text-orange-400 font-bold mb-3">
+    เฉดสีที่รองรับ
+  </p>
+
+  <div className="flex flex-wrap gap-2">
+
+    {product.colors?.map((color, index) => (
+      <div
+        key={index}
+        className="flex items-center gap-2 bg-black/40 px-3 py-2 rounded-lg border border-white/10"
+      >
+        <div
+          className="w-5 h-5 rounded-full border border-white/20"
+          style={{
+            backgroundColor: color.hex,
+          }}
+        />
+
+        <span className="text-xs text-gray-300">
+          {color.code}
+        </span>
+      </div>
+    ))}
+
+  </div>
+
+</div>
               <div className="flex flex-wrap gap-2">
 
                 {product.usage?.map((u, index) => (

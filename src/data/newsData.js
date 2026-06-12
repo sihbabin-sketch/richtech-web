@@ -7,6 +7,7 @@ import img6 from "../assets/LINE_ALBUM_อบรมดับเพลิง 2568
 import img7 from "../assets/LINE_ALBUM_อบรมดับเพลิง 2568_260522_17.jpg";
 import img8 from "../assets/Screenshot 2026-06-10 084513.png";
 import newsVideo from "../assets/เวลสเวด2 PR.mp4";
+import newsVideo2 from "../assets/Sequence 01.mp4";
 const newsData = [
   {
     id: 1,
@@ -40,6 +41,20 @@ const newsData = [
   title: "BEFORE&AFTER",
   shortDesc: "RTP-PUMF(G) โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดเงา",
   video: newsVideo,
+  content: `
+      ✨ RTP-PUMF(G) โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดเงา
+เป็นระบบโพลียูรีเทนคอนกรีต 3 ส่วน ปรับระดับได้เอง ชนิดผิวเรียบ เงา 
+สามารถติดตั้งที่ความหนา 3-5มม. เหมาะสําหรับพื้นคอนกรีตในโรงงาน
+อุตสาหกรรม เพื่อรองรับการใช้งานที่หนักและทนทานต่อการเปลี่ยนแปลงของอุณหภูมิ นอกจากนี้สามารถนําไปใช้ในงานพื้นคอนกรีตทั่วไป 
+เพื่อเพิ่มความทนทานและสวยงาม
+    `,
+  cover: img8
+},
+{
+  id: 3,
+  title: "BEFORE&AFTER",
+  shortDesc: "RTP-PUMF(G) โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดเงา",
+  video: newsVideo2,
   content: `
       ✨ RTP-PUMF(G) โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดเงา
 เป็นระบบโพลียูรีเทนคอนกรีต 3 ส่วน ปรับระดับได้เอง ชนิดผิวเรียบ เงา 

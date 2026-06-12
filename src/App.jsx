@@ -11,7 +11,11 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 import paintImage from "./assets/paint.png";
 import interiorImage from "./assets/color-tank-open2.png";
 import interiorImage2 from "./assets/RTP-Logo-01.png";
-
+import epoxyBucket from "./assets/IMG_20260518_111118_941.jpg";
+import steelBucket from "./assets/steel.png";
+import buildingBucket from "./assets/building.png";
+import waterproofBucket from "./assets/waterproof.png";
+import specialBucket from "./assets/special.png";
 /* DATA */
 const palettes = [
   { name: "Pure Green", hex: "#057e0b" },
@@ -119,11 +123,6 @@ function Home() {
 
         {/* LEFT */}
         <div className="relative z-10">
-
-          <p className="text-orange-500 uppercase tracking-[6px] mb-5 font-semibold">
-            Richtech paint
-          </p>
-
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
             สีคุณภาพสูง
             <span className="block text-orange-500">
@@ -133,8 +132,8 @@ function Home() {
 
           <p className="text-neutral-400 text-lg leading-relaxed mb-10 max-w-xl">
             ผู้เชี่ยวชาญด้านสีอุตสาหกรรม สีอีพ็อกซี่
-            สีเคลือบพื้น และระบบกันซึม
-            มาตรฐานระดับมืออาชีพ
+            สีพียู สีสนามกีฬาและระบบกันซึม
+              ตามมาตรฐานระดับมืออาชีพ
           </p>
 
           {/* BUTTONS */}
@@ -297,59 +296,80 @@ function Home() {
           </div>
 
           {/* GRID */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-           {[
-  "สีพื้นอุตสาหกรรม",
-  "สีโครงสร้างเหล็ก",
-  "สีน้ำทาอาคาร",
-  "สีกันรั่วซึม",
-  "สีเฉพาะทาง",
+{[
+  {
+    name: "สีพื้นอุตสาหกรรม EPOXY",
+    img: epoxyBucket,
+  },
+  {
+    name: "สีโครงสร้างเหล็ก",
+    img: steelBucket,
+  },
+  {
+    name: "สีน้ำทาอาคาร",
+    img: buildingBucket,
+  },
+  {
+    name: "สีกันรั่วซึม",
+    img: waterproofBucket,
+  },
+  {
+    name: "สีเฉพาะทาง",
+    img: specialBucket,
+  },
+  {
+    name: "สีสำหรับงานสนามกีฬา ",
+    img: specialBucket,
+  },
 ].map((item, i) => (
-
   <Link
     to="/products"
     key={i}
     className="
+      group
       block
       bg-[#111]
       border border-orange-500/20
       rounded-3xl
       p-8
-      hover:-translate-y-2
-      hover:border-orange-500
-      hover:shadow-[0_0_35px_rgba(255,115,0,.3)]
-      transition-all duration-300
-      cursor-pointer
     "
   >
-            
+    <div
+  className="
+    w-32 h-32
+    rounded-3xl
+    bg-orange-500/10
+    flex items-center justify-center
+    mb-6
+    overflow-hidden
+  "
+>
+  <img
+    src={item.img}
+    alt={item.name}
+    className="
+      w-28
+      h-28
+      object-contain
+      transition-all
+      duration-300
+      group-hover:scale-110
+    "
+  />
+</div>
+    <h3 className="text-2xl font-bold mb-4">
+      {item.name}
+    </h3>
 
-                <div
-                  className="
-                    w-16 h-16
-                    rounded-2xl
-                    bg-orange-500/10
-                    flex items-center justify-center
-                    mb-6
-                    text-3xl
-                  "
-                >
-                  🎨
-                </div>
-
-                <h3 className="text-2xl font-bold mb-4">
-                  {item}
-                </h3>
-
-                <p className="text-neutral-400 leading-relaxed">
-                  ผลิตภัณฑ์คุณภาพสูง
-                  สำหรับงานอุตสาหกรรมและงานมืออาชีพ
-                </p>
-
-                </Link>
-
-            ))}
+    <p className="text-neutral-400 leading-relaxed">
+      ผลิตภัณฑ์คุณภาพสูง
+      สำหรับงานอุตสาหกรรมและงานมืออาชีพ
+    </p>
+  </Link>
+))}
 
           </div>
 
@@ -402,17 +422,24 @@ function Home() {
 >
               
 
-               <div className="mb-5 flex justify-center">
-  <img
-    src={item.icon}
-    alt={item.title}
-    className="w-14 h-14 object-contain"
-  />
+<div className="mb-5 flex justify-center">
+<img
+  src={item.icon}
+  alt={item.title}
+  className="
+    w-14
+    h-14
+    object-contain
+    transition-all
+    duration-300
+    group-hover:scale-110
+  "
+/>
 </div>
 
-                <h3 className="text-2xl font-bold mb-4">
-                  {item.title}
-                </h3>
+<h3 className="text-2xl font-bold mb-4">
+  {item.title}
+</h3>
 
                 <p className="text-neutral-400">
                   {item.desc}
