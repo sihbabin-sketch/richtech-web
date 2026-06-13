@@ -9,13 +9,16 @@ import Products from "./Products.jsx";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 
 import paintImage from "./assets/paint.png";
+import countImg from "./assets/Q-PQAL UKAS.jpg";
+import countImg2 from "./assets/มอก.png";
 import interiorImage from "./assets/color-tank-open2.png";
 import interiorImage2 from "./assets/RTP-Logo-01.png";
 import epoxyBucket from "./assets/IMG_20260518_111118_941.jpg";
-import steelBucket from "./assets/steel.png";
-import buildingBucket from "./assets/building.png";
+import steelBucket from "./assets/E120.PNG";
+import buildingBucket from "./assets/RTP-P102  สีรองพื้นปูนใหม่กันด่าง.png";
 import waterproofBucket from "./assets/waterproof.png";
-import specialBucket from "./assets/special.png";
+import specialBucket from "./assets/w105.jpg";
+import specialBucket2 from "./assets/w105.jpg";
 /* DATA */
 const palettes = [
   { name: "Pure Green", hex: "#057e0b" },
@@ -250,27 +253,33 @@ function Home() {
 
       {/* STATS */}
       <div className="grid grid-cols-2 gap-5 mt-10">
-        <div className="bg-[#111] border border-orange-500/20 p-6 rounded-2xl">
-          <h3 className="text-4xl font-black text-orange-500 mb-2">20+</h3>
-          <p className="text-neutral-400">ปีประสบการณ์</p>
-        </div>
+  <div className="flex flex-col items-start mt-8">
+  <div className="flex gap-6">
+    <div className="w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
+      <img
+        src={countImg}
+        alt="ISO"
+        className="w-full h-full object-contain"
+      />
+    </div>
 
-       <div className="bg-[#111] border border-orange-500/20 p-6 rounded-2xl">
-  <h3 className="text-4xl font-black text-orange-500 mb-2">
-    มอก.
-  </h3>
-
-  <p className="text-neutral-400 mb-3">
-    มาตรฐานอุตสาหกรรม
-  </p>
+    <div className="w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
+      <img
+        src={countImg2}
+        alt="มอก."
+        className="w-full h-full object-contain"
+      />
+    </div>
+  </div>
 
   <Link
     to="/about"
-    className="text-orange-500 text-sm hover:underline"
+    className="mt-4 text-orange-500 hover:underline"
   >
     อ่านเพิ่มเติม →
   </Link>
 </div>
+
       </div>
     </div>
 
@@ -317,12 +326,8 @@ function Home() {
     img: waterproofBucket,
   },
   {
-    name: "สีเฉพาะทาง",
-    img: specialBucket,
-  },
-  {
     name: "สีสำหรับงานสนามกีฬา ",
-    img: specialBucket,
+    img: specialBucket2,
   },
 ].map((item, i) => (
   <Link
@@ -561,33 +566,24 @@ function About() {
           <div className="grid gap-6">
 
             <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-10 hover:border-orange-500 transition-all duration-300">
-              <h3 className="text-5xl font-black text-orange-500 mb-4">
-                20+
-              </h3>
-
-              <p className="text-xl text-neutral-300">
-                ปีประสบการณ์ด้านสีอุตสาหกรรม
-              </p>
+          <div className="h-80 rounded-3xl border border-orange-500 overflow-hidden">
+  <img
+    src={countImg}
+    alt="มอก."
+    className="w-full h-full object-cover"
+  />
+</div>
             </div>
 
             <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-10 hover:border-orange-500 transition-all duration-300">
-              <h3 className="text-5xl font-black text-orange-500 mb-4">
-                มอก.
-              </h3>
+              <div className="h-80 rounded-3xl border border-orange-500 overflow-hidden">
+                <img
+    src={countImg2}
+    alt="20+"
+   className="w-full h-full object-contain"
+  />
+              </div>
 
-              <p className="text-xl text-neutral-300">
-                ได้รับรองมาตรฐานอุตสาหกรรม
-              </p>
-            </div>
-
-            <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-10 hover:border-orange-500 transition-all duration-300">
-              <h3 className="text-5xl font-black text-orange-500 mb-4">
-                Eco
-              </h3>
-
-              <p className="text-xl text-neutral-300">
-                มุ่งสู่ผลิตภัณฑ์ที่เป็นมิตรต่อสิ่งแวดล้อม
-              </p>
             </div>
 
           </div>
