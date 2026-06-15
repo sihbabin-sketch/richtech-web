@@ -12,8 +12,6 @@ import img11 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569
 import img12 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_9.jpg";
 import img13 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_15.jpg";
 import img14 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_17.jpg";
-
-
 import newsVideo from "../assets/เวลสเวด2 PR.mp4";
 import newsVideo2 from "../assets/Sequence 01.mp4";
 const newsData = [
