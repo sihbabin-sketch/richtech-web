@@ -9,6 +9,7 @@ import img2 from "./assets/Screenshot 2026-06-10 084513.png";
 import img3 from "./assets/steel.png";
 import img4 from "./assets/special.png";
 
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

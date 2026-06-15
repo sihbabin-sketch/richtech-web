@@ -2,8 +2,7 @@ import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import newsData from "./data/newsData";
 
-import newsVideo from "./assets/เวลสเวด2 PR.mp4";
-import newsVideo2 from "./assets/Sequence 01.mp4";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -104,37 +103,38 @@ export default function NewsDetail() {
 
         </Swiper>
 
-<div className="flex justify-center mb-10">
-  <div className="relative">
+{news.video && (
+  <div className="flex justify-center mb-10">
+    <div className="relative">
 
-    <div
-      className="
-        absolute
-        inset-0
-        bg-orange-500/40
-        blur-[100px]
-        scale-125
-        rounded-full
-      "
-    />
+      <div
+        className="
+          absolute
+          inset-0
+          bg-orange-500/40
+          blur-[100px]
+          scale-125
+          rounded-full
+        "
+      />
 
-    <video
-      controls
-      playsInline
-      className="
-        relative
-        z-10
-        w-full
-        max-w-[400px]
-        rounded-3xl
-      "
-    >
-      <source src={newsVideo} type="video/mp4" />
-      <source src={newsVideo2} type="video/mp4" />
-    </video>
+      <video
+        controls
+        playsInline
+        className="
+          relative
+          z-10
+          w-full
+          max-w-[400px]
+          rounded-3xl
+        "
+      >
+        <source src={news.video} type="video/mp4" />
+      </video>
 
+    </div>
   </div>
-</div>
+)}
 <p
   className="    max-w-2xl
     text-left

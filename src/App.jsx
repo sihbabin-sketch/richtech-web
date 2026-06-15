@@ -16,7 +16,7 @@ import interiorImage2 from "./assets/RTP-Logo-01.png";
 import epoxyBucket from "./assets/IMG_20260518_111118_941.jpg";
 import steelBucket from "./assets/E120.PNG";
 import buildingBucket from "./assets/RTP-P102  สีรองพื้นปูนใหม่กันด่าง.png";
-import waterproofBucket from "./assets/waterproof.png";
+import waterproofBucket from "./assets/กันซึม.png";
 import specialBucket from "./assets/w105.jpg";
 import specialBucket2 from "./assets/w105.jpg";
 /* DATA */
@@ -576,9 +576,9 @@ function About() {
             </div>
 
             <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-10 hover:border-orange-500 transition-all duration-300">
-              <div className="h-80 rounded-3xl border border-orange-500 overflow-hidden">
-                <img
-    src={countImg2}
+                  <div className="h-80 rounded-3xl border border-orange-500 overflow-hidden">
+                    <img
+        src={countImg2}
     alt="20+"
    className="w-full h-full object-contain"
   />
