@@ -14,7 +14,7 @@ import countImg2 from "./assets/มอก.png";
 import interiorImage from "./assets/color-tank-open2.png";
 import interiorImage2 from "./assets/RTP-Logo-01.png";
 import epoxyBucket from "./assets/IMG_20260518_111118_941.jpg";
-import steelBucket from "./assets/E120.png";
+import steelBucket from "./assets/E120.PNG";
 import buildingBucket from "./assets/RTP-P102  สีรองพื้นปูนใหม่กันด่าง.png";
 import waterproofBucket from "./assets/กันซึม.png";
 import specialBucket from "./assets/w105.jpg";

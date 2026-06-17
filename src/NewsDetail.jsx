@@ -47,7 +47,7 @@ export default function NewsDetail() {
       transition={{
         duration: 12,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: "easeInOut"
       }}
     />
 
