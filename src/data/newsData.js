@@ -1,19 +1,19 @@
-import img1 from "../assets/LINE_ALBUM_อบรมดับเพลิง 2568_260522_17.jpg";
-import img2 from "../assets/LINE_ALBUM_อบรมดับเพลิง 2568_260522_3.jpg";
-import img3 from "../assets/LINE_ALBUM_อบรมดับเพลิง 2568_260522_63.jpg";
-import img4 from "../assets/LINE_ALBUM_อบรมดับเพลิง 2568_260522_80.jpg";
-import img5 from "../assets/LINE_ALBUM_อบรมดับเพลิง 2568_260522_81.jpg";
-import img6 from "../assets/LINE_ALBUM_อบรมดับเพลิง 2568_260522_121.jpg";
-import img7 from "../assets/LINE_ALBUM_อบรมดับเพลิง 2568_260522_17.jpg";
-import img8 from "../assets/Screenshot 2026-06-10 084513.png";
-import img9 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_1.jpg";
-import img10 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_5.jpg";
-import img11 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_14.jpg";
-import img12 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_9.jpg";
-import img13 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_15.jpg";
-import img14 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_17.jpg";
-import newsVideo from "../assets/เวลสเวด2 PR.mp4";
-import newsVideo2 from "../assets/Sequence 01.mp4";
+import img1 from "../assets/fire-training-01.jpg";
+import img2 from "../assets/fire-training-02.jpg";
+import img3 from "../assets/fire-training-03.jpg";
+import img4 from "../assets/fire-training-04.jpg";
+import img5 from "../assets/fire-training-05.jpg";
+import img6 from "../assets/fire-training-06.jpg";
+import img7 from "../assets/fire-training-07.jpg";
+import img8 from "../assets/screenshot 2026-06-10 084513.png";
+import img9 from "../assets/merit-making-01.jpg";
+import img10 from "../assets/merit-making-02.jpg";
+import img11 from "../assets/merit-making-03.jpg";
+import img12 from "../assets/merit-making-04.jpg";
+import img13 from "../assets/merit-making-05.jpg";
+import img14 from "../assets/merit-making-06.jpg";
+import newsVideo from "../assets/sequence 02.mp4";
+import newsVideo2 from "../assets/sequence 01.mp4";
 const newsData = [
   {
     id: 1,
