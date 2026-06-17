@@ -5,7 +5,7 @@ import img4 from "../assets/fire-training-04.jpg";
 import img5 from "../assets/fire-training-05.jpg";
 import img6 from "../assets/fire-training-06.jpg";
 import img7 from "../assets/fire-training-07.jpg";
-import img8 from "../assets/screenshot 2026-06-10 084513.png";
+import img8 from "../assets/screenshot-cover.png";
 import img9 from "../assets/merit-making-01.jpg";
 import img10 from "../assets/merit-making-02.jpg";
 import img11 from "../assets/merit-making-03.jpg";
@@ -13,7 +13,7 @@ import img12 from "../assets/merit-making-04.jpg";
 import img13 from "../assets/merit-making-05.jpg";
 import img14 from "../assets/merit-making-06.jpg";
 import newsVideo from "../assets/sequence 02.mp4";
-import newsVideo2 from "../assets/sequence 01.mp4";
+import newsVideo2 from "../assets/before-after-video.mp4";
 const newsData = [
   {
     id: 1,
