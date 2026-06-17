@@ -13,7 +13,7 @@ import img12 from "../assets/merit-making-04.jpg";
 import img13 from "../assets/merit-making-05.jpg";
 import img14 from "../assets/merit-making-06.jpg";
 import newsVideo from "../assets/sequence 02.mp4";
-import newsVideo2 from "../assets/before-after-video.mp4";
+import newsVideo2 from "../assets/sequence 01.mp4";
 const newsData = [
   {
     id: 1,
