@@ -6,6 +6,7 @@ import img5 from "../assets/LINE_ALBUM_อบรมดับเพลิง 2568
 import img6 from "../assets/LINE_ALBUM_อบรมดับเพลิง 2568_260522_121.jpg";
 import img7 from "../assets/LINE_ALBUM_อบรมดับเพลิง 2568_260522_17.jpg";
 import img8 from "../assets/Screenshot 2026-06-10 084513.png";
+import img15 from "../assets/Screenshot 2026-06-17 153045.png";
 import img9 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_1.jpg";
 import img10 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_5.jpg";
 import img11 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_14.jpg";
@@ -14,6 +15,7 @@ import img13 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569
 import img14 from "../assets/LINE_ALBUM_ทำบุญบริษัท1432569_260615_17.jpg";
 import newsVideo from "../assets/เวลสเวด2 PR.mp4";
 import newsVideo2 from "../assets/Sequence 01.mp4";
+
 const newsData = [
   {
     id: 1,
@@ -33,7 +35,7 @@ const newsData = [
     images: [
       img1,
       img2,
-      img3,
+      img3, 
         img4, 
         img5,
         img6,
@@ -41,7 +43,7 @@ const newsData = [
     ],
      driveLink:
     "https://drive.google.com/drive/folders/1NUHRoOP8i1CoEXcpTGnEQ0wOccS1oQjc?usp=drive_link",
-  },
+  },  
    {
     id: 2,
 
@@ -51,7 +53,7 @@ const newsData = [
 
       content: `
     
-    `,
+    `,  
     cover: img9,
 
     images: [
@@ -71,16 +73,16 @@ const newsData = [
   shortDesc: "RTP-PUMF(G) โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดเงา",
   video: newsVideo,
   content: `
-      ✨ RTP-PUMF(G) โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดเงา
+      ✨ RTP-PU MF(G) โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดเงา
 เป็นระบบโพลียูรีเทนคอนกรีต 3 ส่วน ปรับระดับได้เอง ชนิดผิวเรียบ เงา 
 สามารถติดตั้งที่ความหนา 3-5มม. เหมาะสําหรับพื้นคอนกรีตในโรงงาน
 อุตสาหกรรม เพื่อรองรับการใช้งานที่หนักและทนทานต่อการเปลี่ยนแปลงของอุณหภูมิ นอกจากนี้สามารถนําไปใช้ในงานพื้นคอนกรีตทั่วไป 
 เพื่อเพิ่มความทนทานและสวยงาม
     `,
   cover: img8
-},
+  },                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 
-{
+  {
   id: 4,
   title: "BEFORE&AFTER",
   shortDesc: "RTP-PUMF(G) โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดเงา",
@@ -92,8 +94,9 @@ const newsData = [
 อุตสาหกรรม เพื่อรองรับการใช้งานที่หนักและทนทานต่อการเปลี่ยนแปลงของอุณหภูมิ นอกจากนี้สามารถนําไปใช้ในงานพื้นคอนกรีตทั่วไป 
 เพื่อเพิ่มความทนทานและสวยงาม
     `,
-  cover: img8
+  cover: img15
 }
+
 ];
 
 export default newsData;

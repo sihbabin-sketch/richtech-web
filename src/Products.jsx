@@ -8,6 +8,38 @@ import img1 from "./assets/LINE_ALBUM_อบรมดับเพลิง 2568_
 import img2 from "./assets/Screenshot 2026-06-10 084513.png";
 import img3 from "./assets/steel.png";
 import img4 from "./assets/special.png";
+import img5 from "./assets/s300.png";
+import img6 from "./assets/s400.png";
+import img7 from "./assets/s440.png";
+import img8 from "./assets/s501.png";
+import img9 from "./assets/s340.png";
+import img10 from "./assets/s341.png";
+import img11 from "./assets/R300.png";
+import img12 from "./assets/R400.png";
+import img13 from "./assets/R500.png";
+import img14 from "./assets/R501.png";
+import img15 from "./assets/PU01.png";
+import img16 from "./assets/PUHF68.png";
+import img17 from "./assets/PUHF68(G).png";
+import img18 from "./assets/PULF12 (G).png";
+import img19 from "./assets/PULF12.png";
+import img20 from "./assets/PUMF35(G).png";
+import img21 from "./assets/PUMF35.png";
+import img22 from "./assets/PUMF35.png";
+import img23 from "./assets/PUMF35.png";
+import img24 from "./assets/PUESD.png";
+import img25 from "./assets/R100.png";
+import img26 from "./assets/R101.png";
+import img27 from "./assets/P100.png";
+import img28 from "./assets/P700.png";
+import img29 from "./assets/P500.png";
+import img30 from "./assets/E100.png";
+import img31 from "./assets/E240.png";
+import img32 from "./assets/P102.png";
+import img33 from "./assets/P105.png";
+import img34 from "./assets/W600.png";
+import img35 from "./assets/W100.png";
+import img36 from "./assets/W503.png";
 
 
 import "swiper/css";
@@ -135,7 +167,7 @@ const categories = [
 
           {
             code: "RTP-S300",
-          images: [ img1, img2,img3, img4,],
+          images: [ img5,],
             name: "สีอีพ็อกซี่ปรับระดับด้วยตัวเอง อัตราส่วน 3 ต่อ 1",
 
             description:
@@ -161,7 +193,7 @@ const categories = [
 
           {
             code: "RTP-S400",
-
+images: [  img6,],
             name: "สีอีพ็อกซี่ปรับระดับด้วยตัวเอง อัตราส่วน 4 ต่อ 1",
 
             description:
@@ -186,7 +218,7 @@ const categories = [
           },
   {
             code: "RTP-S501",
-
+images: [img8,],
             name: "สีอีพ็อกซี่พุตตี้",
  
 
@@ -204,51 +236,10 @@ const categories = [
               "27 กก./ชุด (ส่วน A = 22.5 กก / ส่วน B = 4.5 กก)",
             ],
           },
-          {
-            code: "RTP-S330",
-
-            name: "สีอีพ็อกซี่ปรับระดับด้วยตัวเอง ชนิดทนสารเคมีสูง",
- 
-            description:
-              "RTP-S330 เป็นสีทับหน้าอีพ็อกซี่ 2 ส่วน ไม่มีส่วนผสมของตัวทำละลาย สามารถปรับระดับด้วยตัวเอง ใช้ในงานระบบพื้นอีพ็อกซี่ที่ต้องการทนทานต่อสารเคมีได้สูง",
-
-            usage: [
-              "พื้นโรงงาน",
-              "ห้องปฏิบัติการเคมี",
-              "โกดัง",
-            ],
-
-            coverage: "1.28 กก./ตร.ม. @ 1 มม.",
-
-            package: [
-              "24 กก./ชุด (ส่วน A = 18 กก / ส่วน B = 6 กก)",
-              "4 กก./ชุด (ส่วน A = 3 กก / ส่วน B = 1 กก)",
-            ],
-          },
- {
-            code: "RTP-S201",
-           images: [ img1, img2,img3, img4,],
-            name: "สีอีพ็อกซี่ปรับระดับด้วยตัวเอง ชนิดใส",
-  
-            description:
-              "RTP-S201 เป็นสีทับหน้าอีพ็อกซี่ 2 ส่วน ไม่มีส่วนผสมของตัวทำละลาย สามารถปรับระดับด้วยตัวเอง ใช้ในงานระบบพื้นอีพ็อกซี่ที่ต้องการใส เรียบ และไร้รอยต่อ",
-
-              
-            usage: [
-              "พิพิธภัณฑ์",
-              "โรงแรม",
-            ],
-
-            coverage: "1.1 กก./ตร.ม. @ 1 มม.",
-
-            package: [
-              "30 กก./ชุด (ส่วน A = 20 กก / ส่วน B = 10 กก)",
-              "6 กก./ชุด (ส่วน A = 4 กก / ส่วน B = 2 กก)",
-            ],
-          },
+        
           {
             code: "RTP-S440",
-
+images: [ img7,],
             name: "สีอีพ็อกซี่ปรับระดับด้วยตัวเอง ชนิดถ่ายเทประจุไฟฟ้า",
  
 
@@ -328,7 +319,7 @@ colorChart: [
   products: [
     {
       code: "RTP-R300",
-
+images: [ img11,],
       name: "สีเคลือบผิวอีพ็อกซี่ อัตราส่วน 3 ต่อ 1",
       description:
         "RTP-R300 เป็นสีทับหน้าอีพ็อกซี่ฟิล์มบาง 2 ส่วน ชนิดไม่มีตัวทำละลาย ใช้สำหรับงานพื้นคอนกรีตที่ใช้งานหนัก มีการยึดเกาะได้ดี และทนทานต่อสารเคมี",
@@ -349,7 +340,7 @@ colorChart: [
 
     {
       code: "RTP-R400",
-
+images: [ img12,],
       name: "สีเคลือบผิวอีพ็อกซี่ อัตราส่วน 4 ต่อ 1",
  
       description:
@@ -451,7 +442,7 @@ colorChart: [
   products: [
     {
       code: "RTP-R500",
-
+images: [ img13,],
       name: "สีโพลียูรีเทน ชนิดความเงาสูง สำหรับงานภายนอก",
 
 
@@ -474,7 +465,7 @@ colorChart: [
 
     {
       code: "RTP-R501",
-
+images: [ img14,],
       name: "สีโพลียูรีเทน ชนิดด้าน สำหรับงานภายนอก",
 
 
@@ -580,7 +571,7 @@ showPUS: true,
   products: [
     {
       code: "RTP- PU01",
-
+images: [ img15,],
       name: "รองพื้นโพลียูรีเทนคอนกรีต  ",
 
 
@@ -602,7 +593,7 @@ showPUS: true,
 
     {
       code: "RTP- PUHF68",
-
+images: [ img16,],
       name: "โพลียูรีเทนคอนกรีต 6-8 มม. ชนิดด้าน",
 
 
@@ -624,7 +615,7 @@ showPUS: true,
 
     {
       code: "RTP- PUHF68(G)",
-
+images: [ img17,],
       name: "โพลียูรีเทนคอนกรีต 6-8 มม. ชนิดเงา ",
 
   
@@ -648,7 +639,7 @@ showPUS: true,
     
     {
       code: "RTP-PULF12(G)",
-
+images: [ img18,],
       name: "โพลียูรีเทนคอนกรีต 1-2 มม. ชนิดเงา ",
 
   
@@ -670,7 +661,7 @@ showPUS: true,
     },
     {
       code: "RTP- PULF12",
-
+images: [ img19,],
       name: "โพลียูรีเทนคอนกรีต 1-2 มม. ชนิดด้าน ",
 
   
@@ -692,7 +683,7 @@ showPUS: true,
     },
     {
       code: "RTP-PUMF35(G) ",
-
+images: [ img20,],
       name: "โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดเงา  ",
 
       description:
@@ -711,7 +702,7 @@ showPUS: true,
     },
      {
       code: "RTP-PUMF35",
-
+images: [ img21,],
       name: "โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดด้าน ",
 
       description:
@@ -810,6 +801,7 @@ showPUS: true,
     {
       code: "RTP-S340 ",
       name: "สีทับหน้าอีพ็อกซี่ปรับระดับได้เอง ชนิดป้องกันไฟฟ้าสถิต",
+      images: [  img9,],
       description:
         "RTP-S340   เป็นสีทับหน้าอีพ็อกซี่ 2 ส่วน ชนิดป้องกันไฟฟ้ าสถิต สามารถปรับระดับได้ด้วยตัวเอง ใช้งานง่าย ไม่มีกลิ่นฉุนมีค่าความต้านทานไฟฟ้าอยู่ในช่วง 106-109โอห์มมีสมบัติการถ่ายเทประจุไฟฟ้าได้นอกจากนี้ยังมีสมบัติเชิงกลดี มีความเงาสูง ผิวเรียบ และไร้รอยต่อ  ",
       usage: [
@@ -823,8 +815,9 @@ showPUS: true,
       ],
     },
         {
-      code: "RTP-PUMF(GE) ",
-      name: "สีทับหน้าโพลียูรีเทนคอนกรีต 3 ส่วน",
+      code: "RTP-PUESD ",
+      name: "โพลียูรีเทนคอนกรีต 1-2 มม. ชนิดป้องกันไฟฟ้าสถิต  ",
+      images: [ img24,],
       description:
         "RTP– PUESD เป็นสีทับหน้าโพลียูรีเทนคอนกรีต 3 ส่วน ชนิดป้องกันไฟฟ้าสถิตซึ่งมีความค่าความต้านทานไฟฟ้า 106– 109 Ω มีสมบัติการถ่ายเทประจุไฟฟ้าได้ดีนอกจากนี้ยังมีสมบัติเชิงกลและการยึดเกาะที่ดี ",
       usage: [
@@ -835,10 +828,11 @@ showPUS: true,
       package: [
         "13 กก./ชุด (ส่วน A = 3 กก. , ส่วน B = 3 กก., ส่วน C = 7 กก)",
       ],
-    },
+    },  
         {
       code: "RTP-S341",
       name: "สีทับหน้าอีพ็อกซี่ปรับระดับ 2 ส่วน",
+      images: [  img10,],
       description:
         "RTP-S341 เป็นสีทับหน้าอีพ็อกซี่ปรับระดับ 2 ส่วน ชนิดนำไฟฟ้าได้ ซึ่งมีค่านำไฟฟ้าอยู่ในช่วง 104– 106 Ω มีสมบัติการถ่ายเทประจุไฟฟ้าได้ดี นอกจากนี้ยังมีเชิงกลและการยึดเกาะที่ดี ",
       usage: [
@@ -857,7 +851,7 @@ showPUS: true,
   products: [
     {
       code: "RTP-R100",
-
+images: [ img25,],
       name: "สีอะครีลิค ชนิดกึ่งเงา",
 
       description:
@@ -880,7 +874,7 @@ showPUS: true,
       code: "RTP-R101",
 
       name: "สีอะครีลิค ชนิดเงา",
-
+images: [ img26,],
       description:
         "RTP-R101 เป็นสีทับหน้าอะครีลิค ชนิดเงา เหมาะสำหรับงานพื้นคอนกรีตและฟลอร์ฮาร์ดเดนเนอร์ที่มีความชื้นไม่เกิน 20%",
 
@@ -907,7 +901,7 @@ showPUS: true,
       code: "RTP-P100",
 
       name: "รองพื้นอีพ็อกซี่ 2 ส่วน",
-
+images: [ img27,],
       description:
         "RTP-P100 เป็นรองพื้นอีพ็อกซี่ 2 ส่วน ชนิดมีตัวทำละลาย ใช้สำหรับรองพื้นคอนกรีต เพื่อปิดรูพรุนและเพิ่มการยึดเกาะระหว่างคอนกรีตกับสีทับหน้า",
 
@@ -926,7 +920,7 @@ showPUS: true,
 
     {
       code: "RTP-P700",
-
+images: [ img28,],
       name: "รองพื้นอีพ็อกซี่ 2 ส่วน สำหรับป้องกันไฟฟ้าสถิต",
   
 
@@ -1021,7 +1015,7 @@ showPUS: true,
       code: "RTP-P500",
 
       name: "สีรองพื้นกันสนิมอีพ็อกซี่ ด้วยผงซิงค์ฟอตเฟต",
-    
+    images: [ img29,],
 
       description:
         "RTP-P500 เป็นสีรองพื้นกันสนิมอีพ็อกซี่ 2 ส่วน ที่มีผงสีซิงค์ฟอตเฟตและอลูมิเนียม ใช้สำหรับงานเหล็ก เพื่อป้องกันการเกิดสนิม",
@@ -1099,7 +1093,7 @@ showPUS: true,
 
       name: "สีเคลือบผิวแห้งช้า",
 
-
+  images: [ img30,],
 
       description:
         "RTP-E100 เป็นสีทับหน้าสำหรับงานเหล็ก ผลิตจากอัลคิดเรซิ่นที่มีส่วนผสมของผงสี มีสมบัติการแห้งตัวเร็ว ทนทานต่อสภาวะอากาศได้ดี ใช้งานง่าย และปราศจากสารปรอทและตะกั่ว จึงปลอดภัยต่อผู้ใช้งาน",
@@ -1121,7 +1115,7 @@ showPUS: true,
       code: "RTP-E120",
 
       name: "สีเคลือบลายฆ้อน",
-
+  
 
       description:
         "RTP-E120 เป็นสีทับหน้าสำหรับงานเหล็ก ผลิตจากอัลคิดเรซิ่นที่มีส่วนผสมของอลูมิเนียม ใช้สำหรับพ่นหรือทาเพื่อให้เกิดลวดลายสวยงาม ทนทานต่อสภาวะแวดล้อม ใช้งานง่าย และปราศจากสารปรอทและตะกั่ว",
@@ -1155,7 +1149,7 @@ showPUS: true,
   products: [
     {
       code: "RTP-P102",
-
+  images: [ img32,],
       name: "สีรองพื้นปูนใหม่กันด่าง",
 
       description:
@@ -1178,7 +1172,7 @@ showPUS: true,
       code: "RTP-P105",
 
       name: "สีรองพื้นอเนกประสงค์",
-
+  images: [ img33,],
       description:
         "RTP-P105 เป็นสีรองพื้นที่ช่วยเพิ่มการยึดเกาะของสีทับหน้า เหมาะสำหรับใช้งานกับพื้นผิวปูนและคอนกรีต ใช้งานง่าย และช่วยให้สีทับหน้าติดทนนาน",
 
@@ -1205,7 +1199,7 @@ showPUS: true,
       code: "RTP-E240",
 
       name: "สีน้ำอะครีลิค สำหรับภายในและภายนอก",
-
+images: [ img31,],
       description:
         "RTP-E240 เป็นสีน้ำอะครีลิค ผลิตจากอะครีลิคเรซิ่น ใช้งานได้ทั้งภายในและภายนอกอาคาร มีการยึดเกาะที่ดี และทนทานต่อรังสีอุลตร้าไวโอเลตและสภาพอากาศต่าง ๆ",
 
@@ -1276,7 +1270,7 @@ showPUS: true,
       code: "RTP-W100",
 
       name: "สีกันรั่วซึมอะครีลิคความยืดหยุ่นสูง",
-
+images: [ img35,],
       description:
         "RTP-W100 เป็นสีกันรั่วซึมอะครีลิคสูตรน้ำ เป็นมิตรต่อสิ่งแวดล้อม เหมาะสำหรับงานระบบกันซึมดาดฟ้าและกระเบื้องหลังคา มีการยึดเกาะกับคอนกรีตได้ดี และทนทานต่อรังสีอุลตร้าไวโอเลตและสภาพอากาศต่าง ๆ",
 
@@ -1305,7 +1299,7 @@ showPUS: true,
         code: "RTP-W600",
 
         name: "สีกันรั่วซึมโพลียูรีเทนความยืดหยุ่นสูง",
-
+images: [ img34,],
         description:
           "RTP-W600 เป็นสีกันรั่วซึมโพลียูรีเทน 2 ส่วน สูตรน้ำ เป็นมิตรต่อสิ่งแวดล้อม เหมาะสำหรับระบบกันซึมที่ต้องการฟิล์มบาง มีความยืดหยุ่นสูง แข็งแรง และทนทานต่อสภาพอากาศต่าง ๆ",
 
@@ -1347,7 +1341,7 @@ showPUS: true,
       code: "RTP-W503",
 
       name: "สีโพลียูเรีย-ยูรีเทน ",
-
+images: [ img36,],
       description:
         "RTP-W503  เป็นยางกันรั่วซึมโพลียูเรีย-ยูรีเทน 2 ส่วน มีความแข็งมากกว่า 50 shore A และค่าการยืดตัวที่สูงกว่า 500 % นอกจากนี้ มีสมบัติทางไดนามิคและเชิงกลที่ดีเยี่ยมและทนทานต่อสภาวะแวดล้อมได้ดี เหมาะสำหรับนำไปใช้เป็นพื้นดาดฟ้า  ",
 
@@ -1381,6 +1375,7 @@ showPUS: true,
       code: "RTP-W503",
 
       name: "สีโพลียูเรีย-ยูรีเทน ",
+images: [ img36,],
 
       description:
         "RTP-W503  เป็นยางกันรั่วซึมโพลียูเรีย-ยูรีเทน 2 ส่วน มีความแข็งมากกว่า 50 shore A และค่าการยืดตัวที่สูงกว่า 500 % นอกจากนี้ มีสมบัติทางไดนามิคและเชิงกลที่ดีเยี่ยมและทนทานต่อสภาวะแวดล้อมได้ดี เหมาะสำหรับนำไปใช้เป็นพื้นดาดฟ้า  ",
@@ -1830,7 +1825,7 @@ const productsToShow = search
       รายการสินค้า
     </h3>
 
-    <div className="grid md:grid-cols-2 gap-5">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
 
 {productsToShow.map((product, i) => (
 
@@ -1864,12 +1859,12 @@ const productsToShow = search
 >
     {product.images.map((image, index) => (
       <SwiperSlide key={index}>
-       <img
+ <img
   src={image}
   alt={`${product.code}-${index}`}
-  className="w-full h-[340px] object-cover rounded-xl"
+  className="w-full h-[340px] object-contain rounded-xl"
 />
-      </SwiperSlide>
+   </SwiperSlide>
     ))}
   </Swiper>
 )}

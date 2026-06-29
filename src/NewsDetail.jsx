@@ -1,13 +1,9 @@
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import newsData from "./data/newsData";
-
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/navigation";
-
 import { Navigation } from "swiper/modules";
 
 export default function NewsDetail() {
@@ -22,62 +18,46 @@ export default function NewsDetail() {
     return <div>ไม่พบข่าว</div>;
   }
 
-  return (
+  return (  
   <div className="bg-black min-h-screen text-white px-6 py-20 relative overflow-hidden">
-{/* FLOATING ORANGE GLOW */}
-    <motion.div
-      className="
-        absolute
-        top-[20%]
-        right-[10%]
-        w-[500px]
-        h-[500px]
-        rounded-full
-        bg-orange-500/20
-        blur-[140px]
-        pointer-events-none
-      "
 
-      animate={{
-        x: [0, 40, 0],
-        y: [0, -30, 0],
-        scale: [1, 1.1, 1],
-      }}
+  <motion.div
+    className="
+      absolute
+      top-[10%]
+      right-[-10%]
+      w-[1000px]
+      h-[1000px]
+      rounded-full
+      bg-orange-500/40
+      blur-[220px]
+      pointer-events-none
+      z-0
+    "
+  />
 
-      transition={{
-        duration: 12,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-    />
+  <motion.div
+    className="
+      absolute
+      bottom-[10%]
+      left-[5%]
+      w-[350px]
+      h-[350px]
+      rounded-full
+      bg-orange-600/10
+      blur-[120px]
+      pointer-events-none
+      z-0
+    "
+  />
+     {/* เนื้อหาข่าว */}
+  <div className="relative z-10">
 
-    <motion.div
-      className="
-        absolute
-        bottom-[10%]
-        left-[5%]
-        w-[350px]
-        h-[350px]
-        rounded-full
-        bg-orange-600/10
-        blur-[120px]
-        pointer-events-none
-      "
+    <h1 className="text-5xl font-black mb-10">
+      {news.title}
+    </h1> 
 
-      animate={{
-        x: [0, -30, 0],
-        y: [0, 20, 0],
-      }}
-
-      transition={{
-        duration: 14,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    />
-      <h1 className="text-5xl font-black mb-10">
-        {news.title}
-      </h1>
+  
 
       {/* SLIDER */}
       <Swiper
@@ -168,6 +148,6 @@ export default function NewsDetail() {
   </a>
 )}
     </div>
-    
+  </div>
   );
 }

@@ -7,7 +7,6 @@ import lineIcon from "./assets/LINE.png";
 import { motion, AnimatePresence } from "framer-motion";
 import Products from "./Products.jsx";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
-
 import paintImage from "./assets/paint.png";
 import countImg from "./assets/Q-PQAL UKAS.jpg";
 import countImg2 from "./assets/มอก.png";
@@ -19,6 +18,7 @@ import buildingBucket from "./assets/RTP-P102  สีรองพื้นปู
 import waterproofBucket from "./assets/กันซึม.png";
 import specialBucket from "./assets/w105.jpg";
 import specialBucket2 from "./assets/w105.jpg";
+
 /* DATA */
 const palettes = [
   { name: "Pure Green", hex: "#057e0b" },
@@ -63,7 +63,6 @@ function Navbar() {
     "
   />
 </Link>
-
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-6 text-white">
           <Link to="/" className="hover:text-orange-500">หน้าหลัก</Link>
