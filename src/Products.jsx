@@ -5,12 +5,12 @@ import s200Img from "./assets/e0fd6f1b-ac6a-4401-891c-98d63a52532a.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import img1 from "./assets/LINE_ALBUM_อบรมดับเพลิง 2568_260522_3.jpg";
-import img2 from "./assets/Screenshot 2026-06-10 084513.png";
+import img2 from "./assets/Screenshot 2026-06-10 084513.png";         
 import img3 from "./assets/steel.png";
 import img4 from "./assets/special.png";
 import img5 from "./assets/s300.png";
 import img6 from "./assets/s400.png";
-import img7 from "./assets/s440.png";
+import img7 from "./assets/s440.png"; 
 import img8 from "./assets/s501.png";
 import img9 from "./assets/s340.png";
 import img10 from "./assets/s341.png";
@@ -40,6 +40,11 @@ import img33 from "./assets/P105.png";
 import img34 from "./assets/W600.png";
 import img35 from "./assets/W100.png";
 import img36 from "./assets/W503.png";
+import img37 from "./assets/s300photo.png";
+import img38 from "./assets/s340photo.png";
+import img39 from "./assets/s340photo2.png";
+import img40 from "./assets/pumf(g) 2.png";
+import img41 from "./assets/pumf(g).png"; 
 
 
 import "swiper/css";
@@ -48,11 +53,11 @@ import "swiper/css/pagination";
 const ralColors = [
   ["RAL 1001", "Beige", "#D2B48C"],
   ["RAL 1013", "Oyster White", "#EAE6CA"],
-  ["RAL 1014", "Ivory", "#DDC49A"],
+  ["RAL 1014", "Ivory", "#DDC49A"], 
   ["RAL 1015", "Light Ivory", "#E6D2B5"],
 
   ["RAL 1028", "Melon Yellow", "#FF9E00"],
-  ["RAL 1032", "Broom Yellow", "#D6A200"],
+  ["RAL 1032", "Broom Yellow", "#D6A200"],  
   ["RAL 1034", "Pastel Yellow", "#F4A900"],
 
   ["RAL 2000", "Yellow Orange", "#DD7907"],
@@ -167,7 +172,7 @@ const categories = [
 
           {
             code: "RTP-S300",
-          images: [ img5,],
+          images: [ img5,img37,],
             name: "สีอีพ็อกซี่ปรับระดับด้วยตัวเอง อัตราส่วน 3 ต่อ 1",
 
             description:
@@ -275,7 +280,7 @@ colorChart: [
 
   ["RAL 1028", "Melon Yellow", "#FF9E00"],
   ["RAL 1032", "Broom Yellow", "#D6A200"],
-  ["RAL 1034", "Pastel Yellow", "#F4A900"],
+  ["RAL 1034", "Pastel Yellow", "#F4A900"], 
 
   ["RAL 2000", "Yellow Orange", "#DD7907"],
   ["RAL 2004", "Pure Orange", "#E25303"],
@@ -294,7 +299,7 @@ colorChart: [
   ["RAL 5012", "Light Blue", "#2973B8"],
   ["RAL 5015", "Sky Blue", "#007CB0"],
   ["RAL 5017", "Traffic Blue", "#005B8C"],
-
+  
   ["RAL 6001", "Emerald Green", "#287233"],
   ["RAL 6002", "Leaf Green", "#276235"],
   ["RAL 6010", "Grass Green", "#4C9141"],
@@ -346,7 +351,7 @@ images: [ img11,],
       code: "RTP-R400",
 images: [ img12,],
       name: "สีเคลือบผิวอีพ็อกซี่ อัตราส่วน 4 ต่อ 1",
- 
+
       description:
         "RTP-R400 เป็นสีทับหน้าอีพ็อกซี่ 2 ส่วน ไม่มีส่วนผสมของตัวทำละลาย สามารถปรับระดับด้วยตัวเอง ใช้ในงานระบบพื้นอีพ็อกซี่ที่ต้องการใส เรียบ และไร้รอยต่อ",
 
@@ -369,7 +374,7 @@ images: [ img12,],
 
       name: "สีเคลือบผิวอีพ็อกซี่ ชนิดทนสารเคมีสูง",
  
-     
+
 
       description:
         "RTP-R402 เป็นสีทับหน้าอีพ็อกซี่ฟิล์มบาง 2 ส่วน ชนิดไม่มีตัวทำละลาย ใช้สำหรับงานพื้นคอนกรีตที่ต้องการความทนทานต่อสารเคมีได้สูง",
@@ -688,7 +693,7 @@ images: [ img19,],
     },
     {
       code: "RTP-PUMF35(G) ",
-images: [ img20,],
+images: [ img20,img40,img41,],
       name: "โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดเงา  ",
 
       description:
@@ -704,7 +709,7 @@ images: [ img20,],
       package: [
         "18 กก./ชุด (ส่วน A = 3 กก., ส่วน B = 3 กก., ส่วน C = 12 กก.) ",
       ],
-    },
+    },  
      {
       code: "RTP-PUMF35",
 images: [ img21,],
@@ -806,7 +811,7 @@ images: [ img21,],
     {
       code: "RTP-S340 ",
       name: "สีทับหน้าอีพ็อกซี่ปรับระดับได้เอง ชนิดป้องกันไฟฟ้าสถิต",
-      images: [  img9,],
+      images: [  img9,img38,img39,],
       description:
         "RTP-S340   เป็นสีทับหน้าอีพ็อกซี่ 2 ส่วน ชนิดป้องกันไฟฟ้ าสถิต สามารถปรับระดับได้ด้วยตัวเอง ใช้งานง่าย ไม่มีกลิ่นฉุนมีค่าความต้านทานไฟฟ้าอยู่ในช่วง 106-109โอห์มมีสมบัติการถ่ายเทประจุไฟฟ้าได้นอกจากนี้ยังมีสมบัติเชิงกลดี มีความเงาสูง ผิวเรียบ และไร้รอยต่อ  ",
       usage: [
@@ -1581,7 +1586,7 @@ const productsToShow = search
     <h1 className="text-5xl font-black text-center text-orange-500 mb-12">
   สินค้าของเรา
 </h1>
-
+    
 <div className="max-w-2xl mx-auto mb-10">
   <input
     type="text"
@@ -1642,11 +1647,11 @@ const productsToShow = search
       selectedItem?.title === item.title
         ? "border-orange-500"
         : "border-orange-500/10"
-    }
+    } 
   `}
 >
   
-<p className="text-white font-semibold">
+<p className="text-white font-semibold">        
   {item.title}
 </p>
 

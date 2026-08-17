@@ -18,7 +18,6 @@ import buildingBucket from "./assets/RTP-P102  สีรองพื้นปู
 import waterproofBucket from "./assets/กันซึม.png";
 import specialBucket from "./assets/w105.jpg";
 import specialBucket2 from "./assets/w105.jpg";
-
 /* DATA */
 const palettes = [
   { name: "Pure Green", hex: "#057e0b" },
@@ -254,7 +253,7 @@ function Home() {
       <div className="grid grid-cols-2 gap-5 mt-10">
   <div className="flex flex-col items-start mt-8">
   <div className="flex gap-6">
-    <div className="w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
+    <div className="w-[260px] h-[180px] rounde  d-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
       <img
         src={countImg}
         alt="ISO"
@@ -355,7 +354,7 @@ function Home() {
     src={item.img}
     alt={item.name}
     className="
-      w-28
+      w-28  
       h-28
       object-contain
       transition-all
