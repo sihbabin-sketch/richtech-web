@@ -9,7 +9,6 @@ import { Navigation } from "swiper/modules";
 export default function NewsDetail() {
 
   const { id } = useParams();
- 
   const news = newsData.find(
     (item) => item.id === Number(id)
   );
@@ -19,7 +18,7 @@ export default function NewsDetail() {
   }
 
   return (    
-  <div className="bg-black min-h-screen text-white px-6 py-10 text-1xl relative overflow-hidden">
+  <div className="bg-black min-h-screen text-white px-6 py-10 text-1x1 relative overflow-hidden">
 
   <motion.div
     className="
