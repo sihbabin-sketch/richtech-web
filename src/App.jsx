@@ -1,31 +1,32 @@
 import News from "./News";
 import NewsDetail from "./NewsDetail";
-import React from "react";
+import React, { useState } from "react";
 import fbIcon from "./assets/fb.png";
 import phoneIcon from "./assets/2.png";
 import lineIcon from "./assets/LINE.png";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";  
 import Products from "./Products.jsx";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import paintImage from "./assets/paint.png";
-import countImg from "./assets/Q-PQAL UKAS.jpg";
+import countImg from "./assets/Q-PQAL UKAS.jpg";  
 import countImg2 from "./assets/มอก.png";
 import interiorImage from "./assets/color-tank-open2.png";
 import interiorImage2 from "./assets/RTP-Logo-01.png";
 import epoxyBucket from "./assets/IMG_20260518_111118_941.jpg";
 import steelBucket from "./assets/E120.png";
 import buildingBucket from "./assets/RTP-P102  สีรองพื้นปูนใหม่กันด่าง.png";
-import waterproofBucket from "./assets/กันซึม.png";
-import specialBucket from "./assets/w105.jpg";
+import waterproofBucket from "./assets/กันซึม.png"; 
 import specialBucket2 from "./assets/w105.jpg";
-/* DATA */
+import countImg3 from "./assets/GHPs_0.png";
+import countImg4 from "./assets/HACCP_0.png";
+/* DATA */  
 const palettes = [
   { name: "Pure Green", hex: "#057e0b" },
   { name: "Yello Orange", hex: "#e89607" },
   { name: "Sky Blue", hex: "#008fe1" },
-  { name: "White", hex: "#ffffff" },
-];
-/* ================= PAGE TRANSITION ================= */
+  { name: "White", hex: "#ffffff" },                  
+];    
+/* ================= PAGE TRANSITION ================= */                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 function PageTransition({ children }) {
   return (
     <motion.div
@@ -35,9 +36,9 @@ function PageTransition({ children }) {
       transition={{
         duration: 0.45,
         ease: "easeInOut",
-      }}
+      }}  
     >
-      {children}
+      {children}    
     </motion.div>
   );
 }
@@ -200,7 +201,7 @@ function Home() {
       </section>
 
       {/* ================= ABOUT SECTION ================= */}
-    <section className="py-28 px-6">
+    <section className="py-12 px-6">
   <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
     
     {/* LEFT: IMAGE */}
@@ -223,11 +224,11 @@ function Home() {
 
     {/* RIGHT: CONTENT */}
     <div>
-      <p className="text-orange-500 uppercase tracking-[5px] mb-4">
+      <p className="text-orange-500 uppercase text-3xl tracking-[5px] mb-4">
         COMPANY HISTORY
       </p>
 
-      <h2 className="text-5xl font-black mb-8 leading-tight">
+      <h2 className="text-3xl font-black mb-8 leading-tight">
         ความเป็นมา
       </h2>
 
@@ -253,7 +254,7 @@ function Home() {
       <div className="grid grid-cols-2 gap-5 mt-10">
   <div className="flex flex-col items-start mt-8">
   <div className="flex gap-6">
-    <div className="w-[260px] h-[180px] rounde  d-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
+    <div className="w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
       <img
         src={countImg}
         alt="ISO"
@@ -285,18 +286,18 @@ function Home() {
 </section>
 
       {/* ================= PRODUCT CATEGORY ================= */}
-      <section className="py-28 px-6">
+      <section className="py-8 px-6">
 
         <div className="max-w-7xl mx-auto">
 
           {/* TITLE */}
           <div className="text-center mb-20">
 
-            <p className="text-orange-500 uppercase tracking-[5px] mb-4">
+            <p className="text-orange-500 uppercase text-3xl tracking-[5px] mb-4">
               Products
             </p>
 
-            <h2 className="text-5xl font-black">
+            <h2 className="text-3xl font-black">
               หมวดหมู่สินค้า
             </h2>
 
@@ -413,7 +414,7 @@ function Home() {
   className="
     block
     bg-black/40
-    border border-orange-500/20
+    border border-orange-500/80
     rounded-3xl
     p-10
     text-center
@@ -483,28 +484,24 @@ function Home() {
 
 
 function About() {
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
 
+
       {/* HERO */}
-      <section className="relative py-28 px-6 border-b border-orange-500/10">
+      <section className="relative py-20 px-6 border-b border-orange-500/10">
 
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-orange-500/10 blur-[140px] rounded-full" />
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-orange-500/10 blur-[120px] rounded-full" />
 
         <div className="max-w-7xl mx-auto relative z-10 text-center">
 
-          <p className="text-orange-500 uppercase tracking-[6px] mb-5 font-semibold">
+          <p className="text-orange-500 uppercase tracking-[6px] text-4xl lg:text-5xl font-black leading-tight mb-8">
             About Richtech Paint
           </p>
-
-          <h1 className="text-6xl lg:text-7xl font-black leading-tight mb-8">
-            เกี่ยวกับ
-            <span className="block text-orange-500">
-              Richtech Paint
-            </span>
-          </h1>
-
           <p className="text-neutral-400 text-lg leading-relaxed max-w-3xl mx-auto">
             ผู้นำด้านสีอุตสาหกรรม สีเคลือบพื้น และระบบป้องกันพื้นผิว
             ด้วยประสบการณ์มากกว่า 20 ปี
@@ -514,94 +511,139 @@ function About() {
 
       </section>
 
-      {/* COMPANY HISTORY */}
-      <section className="py-28 px-6">
+    {/* COMPANY HISTORY */}
+ <section className="py-8 px-6">
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+  <div className="max-w-5xl mx-auto">
 
-          {/* LEFT */}
-          <div>
+    {/* COMPANY HISTORY */}
+    <div className="max-w-4xl mx-auto text-center">
 
-            <p className="text-orange-500 uppercase tracking-[5px] mb-4">
-              Company History
-            </p>
+      <p className="text-orange-500 uppercase text-2xl tracking-[5px] mb-4">
+        Company History
+      </p>
 
-            <h2 className="text-5xl font-black leading-tight mb-10">
-              ความเป็นมา
-            </h2>
+      <h2 className="text-xl font-black leading-tight mb-4">
+        ความเป็นมา
+      </h2>
 
-            <div className="space-y-6 text-neutral-400 text-lg leading-relaxed">
+      <div className="space-y-6 text-neutral-400 text-lg leading-relaxed">
 
-              <p>
-                  บริษัท ริชเทค เพ้นท์ จำกัด ก่อตั้งขึ้นในปี พ.ศ. 2552
-                  และมีประสบการณ์ด้านสีอุตสาหกรรมมากกว่า 20 ปี
-                  โดยดำเนินธุรกิจด้านการผลิตสีอุตสาหกรรมคุณภาพสูง
-                  อาทิเช่น สีอีพ็อกซี่ สีโพลียูรีเทน สีอะคริลิก
-                  สีอัลคิด สีไวนิล และสีงานเฉพาะทางต่างๆ
-                </p>
+        <p>
+          บริษัท ริชเทค เพ้นท์ จำกัด ก่อตั้งขึ้นในปี พ.ศ. 2552
+          และมีประสบการณ์ด้านสีอุตสาหกรรมมากกว่า 20 ปี
+          โดยดำเนินธุรกิจด้านการผลิตสีอุตสาหกรรมคุณภาพสูง
+          อาทิเช่น สีอีพ็อกซี่ สีโพลียูรีเทน สีอะคริลิก
+          สีอัลคิด สีไวนิล และสีงานเฉพาะทางต่างๆ
+        </p>
 
-                <p>
-                  ผลิตภัณฑ์ของบริษัทได้รับการยอมรับด้านคุณภาพ
-                  และการบริการภายใต้มาตรฐานอุตสาหกรรม (มอก.)
-                  จากสำนักงานมาตรฐานผลิตภัณฑ์อุตสาหกรรม (สมอ.)
-                  ด้วยความเชี่ยวชาญในการผลิตและพัฒนาผลิตภัณฑ์
-                  โดยใช้อุปกรณ์และเทคโนโลยีที่ทันสมัย
-                </p>
+        <p>
+          ผลิตภัณฑ์ของบริษัทได้รับการยอมรับด้านคุณภาพ
+          และการบริการภายใต้มาตรฐานอุตสาหกรรม (มอก.)
+          จากสำนักงานมาตรฐานผลิตภัณฑ์อุตสาหกรรม (สมอ.)
+          ด้วยความเชี่ยวชาญในการผลิตและพัฒนาผลิตภัณฑ์
+          โดยใช้อุปกรณ์และเทคโนโลยีที่ทันสมัย
+        </p>
 
-                <p>
-                  บริษัทได้รับความไว้วางใจจากผู้รับเหมาก่อสร้าง
-                  เจ้าของโครงการ ที่ปรึกษาโครงการ
-                  รวมถึงผู้ใช้งานทั่วไปทั่วประเทศ
-                  พร้อมทั้งมุ่งเน้นการพัฒนาองค์กรและผลิตภัณฑ์
-                  ให้เป็นมิตรต่อธรรมชาติและสิ่งแวดล้อมอย่างยั่งยืน
-              </p>
-
+        <p>
+          บริษัทได้รับความไว้วางใจจากผู้รับเหมาก่อสร้าง
+          เจ้าของโครงการ ที่ปรึกษาโครงการ
+          รวมถึงผู้ใช้งานทั่วไปทั่วประเทศ
+          พร้อมทั้งมุ่งเน้นการพัฒนาองค์กรและผลิตภัณฑ์
+          ให้เป็นมิตรต่อธรรมชาติและสิ่งแวดล้อมอย่างยั่งยืน
+        </p>
             </div>
+   {/* รูปภาพ */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
 
-          </div>
+    {/* รูป 1 */}
+    <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-5">
+      <div className="h-64 rounded-3xl border border-orange-500/40 overflow-hidden">
+        <img
+  src={countImg}
+  alt="มอก."
+  onClick={() => setSelectedImage(countImg)}
+  className="w-full h-full object-contain p-8 cursor-pointer hover:scale-105 transition-transform duration-300"
+/>
+      </div>
+    </div>
 
-          {/* RIGHT STATS */}
-          <div className="grid gap-6">
+    {/* รูป 2 */}
+    <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-5">
+      <div className="h-64 rounded-3xl border border-orange-500/40 overflow-hidden">
+        <img
+          src={countImg2}
+          alt="เพิ่มเติม"
+          onClick={() => setSelectedImage(countImg2)}
+  className="w-full h-full object-contain p-1 cursor-pointer hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+    </div>
 
-            <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-10 hover:border-orange-500 transition-all duration-300">
-          <div className="h-80 rounded-3xl border border-orange-500 overflow-hidden">
-  <img
-    src={countImg}
-    alt="มอก."
-    className="w-full h-full object-cover"
-  />
-</div>
-            </div>
+    {/* รูป 3 */}
+    <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-5">
+      <div className="h-64 rounded-3xl border border-orange-500/40 overflow-hidden">
+        <img
+          src={countImg3}
+          alt="เพิ่มเติม"
+        onClick={() => setSelectedImage(countImg3)}
+  className="w-full h-full object-contain p-8 cursor-pointer hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+    </div>
 
-            <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-10 hover:border-orange-500 transition-all duration-300">
-                  <div className="h-80 rounded-3xl border border-orange-500 overflow-hidden">
-                    <img
-        src={countImg2}
-    alt="20+"
-   className="w-full h-full object-contain"
-  />
-              </div>
+    {/* รูป 4 */}
+    <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-5">
+      <div className="h-64 rounded-3xl border border-orange-500/40 overflow-hidden">
+        <img
+          src={countImg4}
+          alt="เพิ่มเติม"
+        onClick={() => setSelectedImage(countImg4)}
+  className="w-full h-full object-contain p-8 cursor-pointer hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+    </div>
 
-            </div>
+  </div>
 
-          </div>
+</div> 
+   </div>
+            
+            {/* POPUP ขยายรูป */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-6"
+          onClick={() => setSelectedImage(null)}
+        >
+          <img
+            src={selectedImage}
+            alt="ขยายรูป"
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
 
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-6 right-6 text-white text-3xl hover:text-orange-500 transition"
+          >
+            ✕
+          </button>
         </div>
+      )}
 
-      </section>
-
+    </section>
       {/* VISION & MISSION */}
-      <section className="py-28 px-6 bg-[#0a0a0a]">
+      <section className="py-14 px-6 bg-[#0a0a0a]">
 
         <div className="max-w-7xl mx-auto">
 
           <div className="text-center mb-20">
 
-            <p className="text-orange-500 uppercase tracking-[5px] mb-4">
+            <p className="text-orange-500 uppercase tracking-[5px] text-3xl mb-4">
               Vision & Mission
             </p>
 
-            <h2 className="text-5xl font-black">
+            <h2 className="text-2xl font-black">
               วิสัยทัศน์ และพันธกิจ
             </h2>
 
@@ -610,10 +652,10 @@ function About() {
           <div className="grid lg:grid-cols-2 gap-10">
 
             {/* VISION */}
-            <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-10">
+            <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-5">
 
               <h3 className="text-3xl font-black text-orange-500 mb-6">
-                วิสัยทัศน์
+               Vision
               </h3>
 
               <p className="text-neutral-400 text-lg leading-relaxed">
@@ -628,7 +670,7 @@ function About() {
             <div className="bg-[#111] border border-orange-500/20 rounded-3xl p-10">
 
               <h3 className="text-3xl font-black text-orange-500 mb-6">
-                พันธะภารกิจ
+               Mission
               </h3>
 
               <ul className="space-y-4 text-neutral-400 text-lg">
@@ -656,15 +698,15 @@ function About() {
       </section>
 
       {/* POLICY */}
-      <section className="py-28 px-6">
+      <section className="py-14 px-6">
 
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center"> 
 
-          <p className="text-orange-500 uppercase tracking-[5px] mb-4">
+          <p className="text-orange-500 uppercase tracking-[5px] text-3xl mb-4">
             Policy
           </p>
 
-          <h2 className="text-5xl font-black mb-10">
+          <h2 className="text-2xl font-black mb-10">
             นโยบายบริษัท
           </h2>
 
@@ -689,33 +731,103 @@ function About() {
         </div>
 
       </section>
+{/* ================= SOCIAL CONTACT ================= */}  
+<section className="py-2 px-6 bg-[#0a0a0a]">
+
+  <div className="max-w-5xl mx-auto">
+
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {[
+        {
+          title: "Facebook",
+          icon: fbIcon,
+          link: "https://www.facebook.com/Richtechpaint"
+        },
+        {
+          title: "Phone",
+          icon: phoneIcon,
+          link: "tel:0242052146"
+        },
+        {
+          title: "Line",
+          icon: lineIcon,
+          link: "https://line.me/ti/p/@321yqlrg"
+        },
+      ].map((item, i) => (
+
+        <a
+          key={i}
+          href={item.link}
+          target={item.title === "Phone" ? "_self" : "_blank"}
+          rel="noopener noreferrer"
+          className="
+            block
+            bg-black/40
+            border border-orange-500/80
+            rounded-3xl
+            p-10
+            text-center
+            hover:border-orange-500
+            hover:shadow-[0_0_35px_rgba(255,115,0,.25)]
+            hover:scale-105
+            transition-all duration-300
+          "
+        >
+
+          <div className="mb-5 flex justify-center">
+            <img
+              src={item.icon}
+              alt={item.title}
+              className="
+                w-14
+                h-14
+                object-contain
+                transition-all
+                duration-300
+              "
+            />
+          </div>
+
+          <h3 className="text-2xl font-bold">
+            {item.title}
+          </h3>
+
+        </a>
+
+      ))}
 
     </div>
+
+  </div>
+
+</section>
+   </div>
   );
 }
+
 
 function Contact() {
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
 
       {/* HERO */}
-      <section className="relative py-28 px-6 border-b border-orange-500/10">
-
+<section className="relative py-16 px-6 border-b border-orange-500/10">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-orange-500/10 blur-[140px] rounded-full" />
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-orange-500/10 blur-[120px] rounded-full" />
 
         <div className="max-w-7xl mx-auto relative z-10 text-center">
 
-          <p className="text-orange-500 uppercase tracking-[6px] mb-5 font-semibold">
-            Contact Us
-          </p>
+        <p className="text-orange-500 uppercase tracking-[8px] mb-5 font-semibold text-3xl lg:text-2xl">
+  Contact Us
+</p>
 
-          <h1 className="text-6xl lg:text-7xl font-black leading-tight mb-8">
-            ติดต่อ
-            <span className="block text-orange-500">
-              Richtech Paint
-            </span>
-          </h1>
+         
+           <h1 className="text-7xl lg:text-5xl font-black leading-tight mb-8 ">
+  <span className="text-orange-500">
+    Richtech Paint
+  </span>
+</h1>
 
           <p className="text-neutral-400 text-lg leading-relaxed max-w-3xl mx-auto">
             พร้อมให้คำปรึกษาเรื่องสีอุตสาหกรรม สีเคลือบพื้น
@@ -723,11 +835,73 @@ function Contact() {
           </p>
 
         </div>
+<div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-16 mt-8">
 
+  {[
+    {
+      title: "Facebook",
+      icon: fbIcon,
+      link: "https://www.facebook.com/Richtechpaint"
+    },
+    {
+      title: "Phone",
+      icon: phoneIcon,
+      link: "tel:024205214"
+    },
+    {
+      title: "Line",
+      icon: lineIcon,
+      link: "https://line.me/ti/p/@321yqlrg"
+    },
+  ].map((item, i) => (
+
+    <a
+      key={i}
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        block
+        bg-black/40
+        border border-orange-500/80
+        rounded-3xl
+        p-10
+        text-center
+        hover:border-orange-500
+        hover:shadow-[0_0_35px_rgba(255,115,0,.25)]
+        hover:scale-105
+        transition-all duration-300
+      "
+    >
+
+      <div className="mb-5 flex justify-center">
+        <img
+          src={item.icon}
+          alt={item.title}
+          className="
+            w-14
+            h-14
+            object-contain
+            transition-all
+            duration-300
+            group-hover:scale-110
+          "
+        />
+      </div>
+
+      <h3 className="text-2xl font-bold mb-4">
+        {item.title}
+      </h3>
+
+    </a>
+
+  ))}
+
+</div>
       </section>
 
       {/* CONTACT SECTION */}
-      <section className="py-24 px-6">
+      <section className="py-2 px-2">
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14">
 

@@ -9,7 +9,7 @@ import { Navigation } from "swiper/modules";
 export default function NewsDetail() {
 
   const { id } = useParams();
-
+ 
   const news = newsData.find(
     (item) => item.id === Number(id)
   );
@@ -18,16 +18,16 @@ export default function NewsDetail() {
     return <div>ไม่พบข่าว</div>;
   }
 
-  return (  
-  <div className="bg-black min-h-screen text-white px-6 py-20 relative overflow-hidden">
+  return (    
+  <div className="bg-black min-h-screen text-white px-6 py-10 text-1xl relative overflow-hidden">
 
   <motion.div
     className="
       absolute
       top-[10%]
-      right-[-10%]
-      w-[1000px]
-      h-[1000px]
+      right-[-10%] 
+      w-[450px]
+      h-[1000px]      
       rounded-full
       bg-orange-500/40
       blur-[220px]
@@ -53,7 +53,7 @@ export default function NewsDetail() {
      {/* เนื้อหาข่าว */}
   <div className="relative z-10">
 
-    <h1 className="text-5xl font-black mb-10">
+    <h1 className="text-3xl font-black mb-10">
       {news.title}
     </h1> 
 
@@ -125,29 +125,8 @@ export default function NewsDetail() {
 >
   {news.content}
 </p>
-
-{news.driveLink && (
-  <a
-    href={news.driveLink}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="
-      ml-auto
-      mt-10
-      bg-orange-500
-      hover:bg-orange-600
-      transition
-      px-6 py-3
-      rounded-2xl
-      font-bold
-      w-fit
-      block
-    "
-  >
-    ดูรูปเพิ่มเติม
-  </a>
-)}
     </div>
   </div>
+  
   );
 }

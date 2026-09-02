@@ -8,22 +8,21 @@ import img1 from "./assets/LINE_ALBUM_อบรมดับเพลิง 2568_
 import img2 from "./assets/Screenshot 2026-06-10 084513.png";         
 import img3 from "./assets/steel.png";
 import img4 from "./assets/special.png";
-import img5 from "./assets/s300.png";
+import img5 from "./assets/s300.png";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 import img6 from "./assets/s400.png";
 import img7 from "./assets/s440.png"; 
 import img8 from "./assets/s501.png";
-import img9 from "./assets/s340.png";
+import img9 from "./assets/S340 (2).png";   
 import img10 from "./assets/s341.png";
 import img11 from "./assets/R300.png";
 import img12 from "./assets/R400.png";
-import img13 from "./assets/R500.png";
+import img13 from "./assets/R500.png";  
 import img14 from "./assets/R501.png";
 import img15 from "./assets/PU01.png";
-import img16 from "./assets/PUHF68.png";
+import img16 from "./assets/PUHF68.png";  
 import img17 from "./assets/PUHF68(G).png";
 import img18 from "./assets/PULF12 (G).png";
 import img19 from "./assets/PULF12.png";
-import img20 from "./assets/PUMF35(G).png";
 import img21 from "./assets/PUMF35.png";
 import img22 from "./assets/PUMF35.png";
 import img23 from "./assets/PUMF35.png";
@@ -40,12 +39,17 @@ import img33 from "./assets/P105.png";
 import img34 from "./assets/W600.png";
 import img35 from "./assets/W100.png";
 import img36 from "./assets/W503.png";
-import img37 from "./assets/s300photo.png";
-import img38 from "./assets/s340photo.png";
-import img39 from "./assets/s340photo2.png";
-import img40 from "./assets/pumf(g) 2.png";
-import img41 from "./assets/pumf(g).png"; 
-
+import img37 from "./assets/S300 (2).png";
+import img38 from "./assets/S340.png";
+import img40 from "./assets/PUMF(G)35 (2).png";
+import img41 from "./assets/PUMF(G)35.png"; 
+import img42 from "./assets/R900 2.png"; 
+import img43 from "./assets/R900.png"; 
+import img44 from "./assets/W503 (2).png"; 
+import img45 from "./assets/R400 (2).png"; 
+import img46 from "./assets/PU01 (2).png"; 
+import img47 from "./assets/M101.png"; 
+import img48 from "./assets/M101 (2).png"; 
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -84,7 +88,7 @@ const ralColors = [
   ["RAL 6018", "Yellow Green", "#57A639"],
   ["RAL 6019", "Pastel Green", "#BDECB6"],
   ["RAL 6024", "Traffic Green", "#308446"],
-  ["RAL 6026", "Opal Green", "#015D52"],
+  ["RAL 6026", "Opal Green", "#015D52"],        
   ["RAL 6029", "Mint Green", "#006F3C"],
   ["RAL 6032", "Signal Green", "#1B8F4E"],
   ["RAL 6037", "Pure Green", "#00A933"],
@@ -166,7 +170,7 @@ const categories = [
   ["RAL 9017", "Traffic Black", "#1E1E1E"],
   ["RAL 9018", "Papyrus White", "#D7D7D0"],
   ],
-
+    
         products: [
          
 
@@ -232,7 +236,7 @@ images: [img8,],
  
 
             description:
-              "RTP-S501 เป็นสีชั้นกลางอีพ็อกซี่ 2 ส่วน สามารถผสมกับฟูมซิลิกา เพื่อปกปิดรูพรุนของพื้น",
+              "RTP-S501 เป็นสีอีพ็อกซี่พุตตี้ 2 ส่วน ใช้งานง่าย ใช้สําหรับระบบงานพื้นอีพ็อกซี่ สามารถผสมกับผงเบาปรับการไหลเพื่อปิดรูอากาศและปรับสภาพพื้นผิวให้เรียบก่อนติดตั้งสีทับหน้า",
 
             usage: [
               "ปกปิดรูพรุนของพื้น",
@@ -243,28 +247,6 @@ images: [img8,],
 
             package: [
               "27 กก./ชุด (ส่วน A = 22.5 กก / ส่วน B = 4.5 กก)",
-            ],
-          },
-        
-          {
-            code: "RTP-S440",
-images: [ img7,],
-            name: "สีอีพ็อกซี่ปรับระดับด้วยตัวเอง ชนิดถ่ายเทประจุไฟฟ้า",
- 
-
-            description:
-              "RTP-S440 เป็นสีทับหน้าอีพ็อกซี่ 2 ส่วน ไม่มีส่วนผสมของตัวทำละลาย สามารถปรับระดับด้วยตัวเอง ใช้ในงานระบบพื้นอีพ็อกซี่ที่ต้องการถ่ายเทประจุไฟฟ้า เพื่อป้องกันการเกิดไฟฟ้าสถิต",
-
-            usage: [
-              "โรงงานอิเล็กทรอนิกส์",
-              "พื้นที่ป้องกันไฟฟ้าสถิต",
-            ],
-
-            coverage: "1.28 กก./ตร.ม. @ 1 มม.",
-
-            package: [
-              "25 กก./ชุด (ส่วน A = 20 กก / ส่วน B = 5 กก)",
-              "4 กก./ชุด (ส่วน A = 3.2 กก / ส่วน B = 0.8 กก)",
             ],
           },
         ],
@@ -331,7 +313,7 @@ colorChart: [
 images: [ img11,],
       name: "สีเคลือบอีพ็อกซี่ ปรับระดับได้ ชนิดไม่มีตัวทําละลาย ",
       description:
-        "RTP-R300 เป็ นสีเคลือบอีพ็อกซี่ 2 ส่วน ปรับระดับได้ ชนิดฟิล์มหนา ไม่มีตัวทําละลายใช้งานง่าย ฟิล์มที่ได้มีความเรียบ เงา ไร้รอยต่อ มีสมบัติการยึดเกาะดี และทนทานต่อสารเคมีทั่วไปได้ เหมาะสําหรับพื้นที่ที่ต้องรับนํ้าหนักเบาถึงปานกลาง ",
+        "RTP-R300 เป็นสีเคลือบอีพ็อกซี่ 2 ส่วน ปรับระดับได้ ชนิดฟิล์มหนา ไม่มีตัวทําละลายใช้งานง่าย ฟิล์มที่ได้มีความเรียบ เงา ไร้รอยต่อ มีสมบัติการยึดเกาะดี และทนทานต่อสารเคมีทั่วไปได้ เหมาะสําหรับพื้นที่ที่ต้องรับนํ้าหนักเบาถึงปานกลาง ",
 
       usage: [
         "โรงงาน",
@@ -339,7 +321,7 @@ images: [ img11,],
         "โรงเรียน",
       ],
 
-      coverage: "0.43 – 0.72 กก./ตร.ม @300 – 500 ไมครอน",
+      coverage: "0.80 กก./ตร.ม. @ 300ไมครอน",
 
       package: [
         "24 กก./ชุด (ส่วน A = 18 กก. / ส่วน B = 6 กก.)",
@@ -349,7 +331,7 @@ images: [ img11,],
 
     {
       code: "RTP-R400",
-images: [ img12,],
+images: [ img12,img45,],
       name: "สีเคลือบผิวอีพ็อกซี่ อัตราส่วน 4 ต่อ 1",
 
       description:
@@ -364,30 +346,8 @@ images: [ img12,],
       coverage: "0.15 กก./ตร.ม. @ 75 ไมครอน ",
 
       package: [
-        "30 กก./ชุด (ส่วน A = 20 กก / ส่วน B = 10 กก)",
-        "6 กก./ชุด (ส่วน A = 4 กก / ส่วน B = 2 กก)",
-      ],
-    },
-
-    {
-      code: "RTP-R402",
-
-      name: "สีเคลือบผิวอีพ็อกซี่ ชนิดทนสารเคมีสูง",
- 
-
-
-      description:
-        "RTP-R402 เป็นสีทับหน้าอีพ็อกซี่ฟิล์มบาง 2 ส่วน ชนิดไม่มีตัวทำละลาย ใช้สำหรับงานพื้นคอนกรีตที่ต้องการความทนทานต่อสารเคมีได้สูง",
-
-      usage: [
-        "ห้องแลป",
-        "โกดังสารเคมี",
-      ],
-
-      coverage: "0.375 กก./ตร.ม @250 ไมครอน",
-
-      package: [
-        "24 กก./ชุด (ส่วน A = 18 กก / ส่วน B = 6 กก)",
+        "4 กก./ชุด (ส่วน A = 3.2 กก., ส่วน B = 0.8 กก.) ",
+        "20 กก./ชุด (ส่วน A = 16 กก., ส่วน B = 4 กก.) ",
       ],
     },
   ],
@@ -580,7 +540,7 @@ showPUS: true,
   products: [
     {
       code: "RTP- PU01",
-images: [ img15,],
+images: [ img15,img46,],
       name: "รองพื้นโพลียูรีเทนคอนกรีต  ",
 
 
@@ -693,7 +653,7 @@ images: [ img19,],
     },
     {
       code: "RTP-PUMF35(G) ",
-images: [ img20,img40,img41,],
+images: [ img40,img41,],
       name: "โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดเงา  ",
 
       description:
@@ -811,7 +771,7 @@ images: [ img21,],
     {
       code: "RTP-S340 ",
       name: "สีทับหน้าอีพ็อกซี่ปรับระดับได้เอง ชนิดป้องกันไฟฟ้าสถิต",
-      images: [  img9,img38,img39,],
+      images: [  img9,img38,],
       description:
         "RTP-S340   เป็นสีทับหน้าอีพ็อกซี่ 2 ส่วน ชนิดป้องกันไฟฟ้ าสถิต สามารถปรับระดับได้ด้วยตัวเอง ใช้งานง่าย ไม่มีกลิ่นฉุนมีค่าความต้านทานไฟฟ้าอยู่ในช่วง 106-109โอห์มมีสมบัติการถ่ายเทประจุไฟฟ้าได้นอกจากนี้ยังมีสมบัติเชิงกลดี มีความเงาสูง ผิวเรียบ และไร้รอยต่อ  ",
       usage: [
@@ -924,7 +884,9 @@ images: [ img27,],
       coverage: [ "0.1 กก./ตร.ม. @ 50 ไมครอน 0.20 กก./ตร.ม. @ 100 ไมครอน  ",],
 
       package: [
-        "18 กก.",
+        "3.6 กก./ชุด (ส่วน A = 3.0 กก., ส่วน B = 0.6 กก.) ",
+                "18 กก./ชุด (ส่วน A = 15 กก., ส่วน B = 3 กก.) ",
+
       ],
     },
 
@@ -954,7 +916,6 @@ images: [ img28,],
 
      {
   title: "มอต้าร์",
-
   products: [
     {
       code: "RTP-M101",
@@ -964,7 +925,7 @@ images: [ img28,],
 
 
       description:
-        "RTP-M101 เป็นมอร์ต้าอีพ็อกซี่ 2 ส่วน สามารถผสมกับทรายได้ ใช้เป็นชั้นกลางสำหรับปรับระดับพื้นผิวคอนกรีตให้สม่ำเสมอ",
+        "RTP-M101 เป็นน้ำยาอีพ็อกซี่ 2 ส่วน ปราศจากตัวทําละลาย ใช้งานง่าย แห้งเร็ว ใช้สําหรับงานรองพื้น งานชั่นกลางมอร์ต้าร์ปรับระดับและมอร์ต้าร์ทรายแห้งได้ เพื่อปรับความหนาและเพิ่มความแข็งแรงให้แก่ระบบพื้น",
 
       usage: [
         "รองพื้นคอนกรีต",
@@ -988,6 +949,7 @@ images: [ img28,],
   products: [
     {
       code: "RTP-C100",
+images: [ img47, img48,],
 
       name: "ซีเมนต์สำหรับป้องกันความชื้น",
 
@@ -1043,31 +1005,6 @@ images: [ img28,],
         "4.8 กก./ชุด (ส่วน A = 4 กก / ส่วน B = 0.8 กก)",
       ],
     },
-
-    {
-      code: "RTP-P600",
-
-      name: "สีรองพื้นแดงกันสนิม ด้วยผงอ๊อกไซด์",
-
-   
-
-      description:
-        "RTP-P600 เป็นสีรองพื้นกันสนิมอัลขิดเรซิ่น ที่มีผงสีอ๊อกไซด์ ใช้สำหรับงานเหล็ก เพื่อป้องกันการเกิดสนิม",
-
-      usage: [
-        "งานเหล็ก",
-        "ป้องกันสนิม",
-        "โครงสร้างเหล็ก",
-      ],
-
-      coverage: "0.06 – 0.10 กก./ตร.ม. @30 -50 ไมครอน",
-
-      package: [
-        "24 กก.",
-        "4.5 กก.",
-      ],
-    },
-
     {
       code: "RTP-P999",
 
@@ -1118,29 +1055,6 @@ images: [ img28,],
       package: [
         "18.9 กก.",
         "3.785 กก.",
-      ],
-    },
-
-    {
-      code: "RTP-E120",
-
-      name: "สีเคลือบลายฆ้อน",
-  
-
-      description:
-        "RTP-E120 เป็นสีทับหน้าสำหรับงานเหล็ก ผลิตจากอัลคิดเรซิ่นที่มีส่วนผสมของอลูมิเนียม ใช้สำหรับพ่นหรือทาเพื่อให้เกิดลวดลายสวยงาม ทนทานต่อสภาวะแวดล้อม ใช้งานง่าย และปราศจากสารปรอทและตะกั่ว",
-
-      usage: [
-        "เครื่องใช้สำนักงาน",
-        "เครื่องจักรอุตสาหกรรม",
-        "งานพ่นเหล็ก",
-      ],
-
-      coverage: "0.06 – 0.1 กก./ตร.ม. @30 – 50 ไมครอน",
-
-      package: [
-        "24 กก.",
-        "4.5 กก.",
       ],
     },
   ],
@@ -1219,44 +1133,6 @@ images: [ img31,],
       ],
 
       coverage: "0.09 – 0.10 กก./ตร.ม. @ 35 – 40 ไมครอน",
-
-      package: [
-        "18.9 ลิตร",
-      ],
-    },
-
-    {
-      code: "RTP-E250",
-
-      name: "สีน้ำอะครีลิค สำหรับภายนอก",
-
-      description:
-        "RTP-E250 เป็นสีน้ำอะครีลิค ผลิตจากอะครีลิคเรซิ่น สำหรับงานภายนอกอาคาร มีการยึดเกาะที่ดี และทนทานต่อรังสีอุลตร้าไวโอเลตและสภาพอากาศได้ดี",
-
-      usage: [
-        "ทาภายนอกอาคาร",
-      ],
-
-      coverage: "0.09 – 0.10 กก./ตร.ม. @ 35 – 40 ไมครอน",
-
-      package: [
-        "18.9 ลิตร",
-      ],
-    },
-
-    {
-      code: "RTP-E251",
-
-      name: "สีน้ำอะครีลิค สำหรับภายใน",
-
-      description:
-        "RTP-E251 เป็นสีน้ำอะครีลิค ผลิตจากอะครีลิคเรซิ่น สำหรับงานภายในอาคาร มีสมบัติการยึดเกาะที่ดี",
-
-      usage: [
-        "ทาภายในอาคาร",
-      ],
-
-      coverage: "0.10 – 0.12 กก./ตร.ม. @ 35 – 40 ไมครอน",
 
       package: [
         "18.9 ลิตร",
@@ -1351,7 +1227,7 @@ images: [ img34,],
       code: "RTP-W503",
 
       name: "สีโพลียูเรีย-ยูรีเทน ",
-images: [ img36,],
+images: [ img36,img44,],
       description:
         "RTP-W503  เป็นยางกันรั่วซึมโพลียูเรีย-ยูรีเทน 2 ส่วน มีความแข็งมากกว่า 50 shore A และค่าการยืดตัวที่สูงกว่า 500 % นอกจากนี้ มีสมบัติทางไดนามิคและเชิงกลที่ดีเยี่ยมและทนทานต่อสภาวะแวดล้อมได้ดี เหมาะสำหรับนำไปใช้เป็นพื้นดาดฟ้า  ",
 
@@ -1384,8 +1260,8 @@ images: [ img36,],
     {
       code: "RTP-W503",
 
-      name: "สีโพลียูเรีย-ยูรีเทน ",
-images: [ img36,],
+      name: "สีโพลียูเรีย-ยูรีเทน ",  
+images: [ img36,img44,],
 
       description:
         "RTP-W503  เป็นยางกันรั่วซึมโพลียูเรีย-ยูรีเทน 2 ส่วน มีความแข็งมากกว่า 50 shore A และค่าการยืดตัวที่สูงกว่า 500 % นอกจากนี้ มีสมบัติทางไดนามิคและเชิงกลที่ดีเยี่ยมและทนทานต่อสภาวะแวดล้อมได้ดี เหมาะสำหรับนำไปใช้เป็นพื้นดาดฟ้า  ",
@@ -1394,6 +1270,7 @@ images: [ img36,],
         "ดาดฟ้า",
         "หลังคา",
         "ระเบียง",
+        "พื้นสนามกีฬา",
         "พื้นที่กันรั่วซึม",
       ],
 
@@ -1407,7 +1284,7 @@ images: [ img36,],
       code: "RTP-R900",
 
       name: "สีกันรั่วซึมโพลียูรีเทนความยืดหยุ่นสูง",
-
+images: [ img42,img43,],
       description:
         "RTP-R900 เป็นสีเคลือบโพลียูรีเทนยืดหยุ่น ประกอบด้วย 2 ส่วน คือ โพลีอีเทอร์-โพลีออล์ล และอะลิฟาติกไอโซไซยาเนต ซึ่งมีสมบัติหยืดหยุ่นได้ ทนต่อรังสี UV และสภาวะอากาศได้",
 
@@ -1416,6 +1293,8 @@ images: [ img36,],
         "หลังคา",
         "ระเบียง",
         "พื้นที่กันรั่วซึม",
+        "พื้นสนามกีฬา",
+
       ],
 
       coverage: "0.32 กก./ตร.ม. @ 100 ไมครอน",
@@ -1803,29 +1682,78 @@ const productsToShow = search
       POLYURETHANE SCREED
     </h3>
 
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-      {pusColors.map(([code, left, right], index) => (
-        <div key={index}>
-          <div
-            className="h-14 rounded-lg border border-white/10"
-            style={{
-              background: `linear-gradient(to right, ${left} 50%, ${right} 50%)`,
-            }}
-          />
+  {pusColors.map(([code, left, right], index) => (
+    <div
+      key={index}
+      onClick={() =>
+        setActiveColor(activeColor === `pus-${index}` ? null : `pus-${index}`)
+      }
+      className="
+        group
+        relative
+        cursor-pointer
+        transition-all
+        duration-300
+        hover:scale-105
+        hover:z-20
+      "
+    >
 
-          <p className="text-center text-xs mt-2">
-            {code}
-          </p>
-        </div>
-      ))}
+      <div
+        className="h-14 rounded-lg border border-white/10"
+        style={{
+          background: `linear-gradient(to right, ${left} 50%, ${right} 50%)`,
+        }}
+      />
+
+      <p className="text-center text-xs mt-2">
+        {code}
+      </p>
+
+      {/* POPUP */}
+      <div
+        className={`
+          absolute
+          bottom-full
+          left-1/2
+          -translate-x-1/2
+          mb-2
+          z-50
+          bg-black
+          border
+          border-orange-500/30
+          rounded-lg
+          px-3
+          py-2
+          whitespace-nowrap
+          shadow-xl
+          transition-all
+          duration-300
+          ${
+            activeColor === `pus-${index}`
+              ? "opacity-100"
+              : "opacity-0 pointer-events-none"
+          }
+        `}
+      >
+        <p className="text-orange-400 font-bold text-xs">
+          {code}
+        </p>
+
+        <p className="text-white text-xs">
+          เงา / ด้าน
+        </p>
+      </div>
 
     </div>
+  ))}
 
-  </div>
-)}
+</div>
 
-{/* PRODUCTS */}
+  </div>    
+  )}
 {(search || selectedItem?.products?.length > 0) && (
   <div
     ref={detailRef}
@@ -2007,6 +1935,7 @@ const productsToShow = search
 
   </div>
 )}
+
     </div>
   );
 }

@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import newsData from "./data/newsData";
 import { motion } from "framer-motion";
+import fbIcon from "./assets/fb.png";
+import phoneIcon from "./assets/2.png";
+import lineIcon from "./assets/LINE.png";
 export default function News() {
   return (
     <div className="bg-black min-h-screen text-white px-10 py-16 relative overflow-hidden">
@@ -96,7 +99,111 @@ export default function News() {
         </div>
       </div>
     ))}
+    
     </div>
+
+{/* ช่องทางติดต่อ */}
+<section className="mt-20 pt-16 border-t border-orange-500/10">
+
+  <h2 className="text-4xl font-black text-center mb-10">
+    ติดต่อเรา
+  </h2>
+
+  <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+
+    {/* Facebook */}
+    <a
+      href="https://www.facebook.com/Richtechpaint"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        block
+        bg-black/40
+        border border-orange-500/80
+        rounded-3xl
+        p-10
+        text-center
+        hover:border-orange-500
+        hover:shadow-[0_0_35px_rgba(255,115,0,.25)]
+        hover:scale-105
+        transition-all duration-300
+      "
+    >
+      <div className="mb-5 flex justify-center">
+        <img
+          src={fbIcon}
+          alt="Facebook"
+          className="w-14 h-14 object-contain"
+        />
+      </div>
+
+      <h3 className="text-2xl font-bold">
+        Facebook  
+      </h3>
+    </a>
+
+    {/* Phone */}
+    <a
+      href="tel:0242052146"
+      className="
+        block
+        bg-black/40
+        border border-orange-500/80
+        rounded-3xl
+        p-10
+        text-center
+        hover:border-orange-500
+        hover:shadow-[0_0_35px_rgba(255,115,0,.25)]
+        hover:scale-105
+        transition-all duration-300
+      "
+    >
+      <div className="mb-5 flex justify-center">
+        <img
+          src={phoneIcon}
+          alt="Phone"
+          className="w-14 h-14 object-contain"
+        />
+      </div>
+
+      <h3 className="text-2xl font-bold">
+        Phone
+      </h3>
+    </a>
+
+    {/* LINE */}
+    <a
+      href="https://line.me/ti/p/@321yqlrg"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        block
+        bg-black/40
+        border border-orange-500/80
+        rounded-3xl
+        p-10
+        text-center
+        hover:border-orange-500
+        hover:shadow-[0_0_35px_rgba(255,115,0,.25)]
+        hover:scale-105
+        transition-all duration-300
+      "
+    >
+      <div className="mb-5 flex justify-center">
+        <img
+          src={lineIcon}
+          alt="LINE"
+          className="w-14 h-14 object-contain"
+        />
+      </div>
+
+      <h3 className="text-2xl font-bold">
+        Line
+      </h3>
+    </a>
+
+  </div>
+</section>
   </div>
 
 </div>
