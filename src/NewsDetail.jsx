@@ -16,7 +16,7 @@ export default function NewsDetail() {
   if (!news) {
     return <div>ไม่พบข่าว</div>;
   }
-
+  
   return (    
   <div className="bg-black min-h-screen text-white px-6 py-10 text-1x1 relative overflow-hidden">
 

@@ -1739,7 +1739,7 @@ const productsToShow = search
 
     </div>
   ))}
-
+  
 </div>
 
   </div>    
