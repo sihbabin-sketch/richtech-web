@@ -250,15 +250,15 @@ function Home() {
                   ให้เป็นมิตรต่อธรรมชาติและสิ่งแวดล้อมอย่างยั่งยืน</p>
       </div>
 
-     {/* STATS */}
-<div className="grid grid-cols- gap-2 mt-2">
+{/* STATS */}
+<div className="grid gap-2 mt-2">
   <div className="flex flex-col items-start mt-6">
 
     {/* CERTIFICATE */}
-    <div className="grid grid-cols-2 gap-9">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
       {/* รูปที่ 1 */}
-      <div className="w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
+      <div className="w-full max-w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
         <img
           src={countImg}
           alt="ISO"
@@ -267,7 +267,7 @@ function Home() {
       </div>
 
       {/* รูปที่ 2 */}
-      <div className="w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
+      <div className="w-full max-w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
         <img
           src={countImg2}
           alt="มอก."
@@ -276,7 +276,7 @@ function Home() {
       </div>
 
       {/* รูปที่ 3 */}
-      <div className="w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
+      <div className="w-full max-w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
         <img
           src={countImg3}
           alt="GHPs."
@@ -285,7 +285,7 @@ function Home() {
       </div>
 
       {/* รูปที่ 4 */}
-      <div className="w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
+      <div className="w-full max-w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
         <img
           src={countImg4}
           alt="HACCP."
@@ -295,15 +295,15 @@ function Home() {
 
     </div>
 
-  <Link
-    to="/about"
-    className="mt-4 text-orange-500 hover:underline"
-  >
-    อ่านเพิ่มเติม →
-  </Link>
-</div>
+    <Link
+      to="/about"
+      className="mt-4 text-orange-500 hover:underline"
+    >
+      อ่านเพิ่มเติม →
+    </Link>
 
-      </div>
+  </div>
+</div>
     </div>
 
   </div>
