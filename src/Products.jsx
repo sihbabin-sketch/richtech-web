@@ -30,7 +30,6 @@ import img34 from "./assets/W600.png";
 import img35 from "./assets/W100.png";
 import img36 from "./assets/W503.png";
 import img37 from "./assets/S300 (2).png";
-import img38 from "./assets/S340.png";
 import img40 from "./assets/PUMF(G)35 (2).png";
 import img41 from "./assets/PUMF(G)35.png"; 
 import img42 from "./assets/R900 2.png"; 
