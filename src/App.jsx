@@ -1,4 +1,5 @@
 import News from "./News";
+import CourtDesigner from "./CourtDesigner";
 import NewsDetail from "./NewsDetail";
 import React, { useState } from "react";
 import fbIcon from "./assets/fb.png";
@@ -7,30 +8,98 @@ import lineIcon from "./assets/LINE.png";
 import { motion, AnimatePresence } from "framer-motion";  
 import Products from "./Products.jsx";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
-import paintImage from "./assets/paint.png";
-import countImg from "./assets/Q-PQAL UKAS.jpg";  
-import countImg2 from "./assets/มอก.png";
-import interiorImage from "./assets/color-tank-open2.png";
+import paintImage from "./assets/paint.png";  
+import countImg from "./assets/Q-PQAL UKAS.jpg";
+import countImg2 from "./assets/มอก.png"; 
+import interiorImage from "./assets/color-tank-open2.png";  
 import interiorImage2 from "./assets/RTP-Logo-01.png";
-import epoxyBucket from "./assets/IMG_20260518_111118_941.jpg";
-import steelBucket from "./assets/E120.png";
-import buildingBucket from "./assets/RTP-P102  สีรองพื้นปูนใหม่กันด่าง.png";
-import waterproofBucket from "./assets/กันซึม.png"; 
-import specialBucket2 from "./assets/w105.jpg";
 import countImg3 from "./assets/GHPs_0.png";
 import countImg4 from "./assets/HACCP_0.png";
-/* DATA */  
+import productR300 from "./assets/R300.png";
+import productR400 from "./assets/R400 BU.png";
+import productS201 from "./assets/W100.png";
+import productS300 from "./assets/PUMF35(G).png";
+import productS302 from "./assets/PULF12 (G).png";
+import productS303 from "./assets/s341.png";
+import productS304 from "./assets/R500.png";
+import productS305 from "./assets/W600.png";
+
+import "swiper/css";
+import "swiper/css/navigation"; 
+import { Swiper, SwiperSlide } from "swiper/react";     
+import { Autoplay,Navigation } from "swiper/modules";
+const recommendedProducts = [
+  {
+    code: "RTP-R300",
+    name: "สีอีพ็อกซี่ชนิดฟิล์มบาง",
+    description:  
+      "สีอีพ็อกซี่สำหรับเคลือบพื้นผิว ให้ความแข็งแรง ทนทานต่อการใช้งาน",
+    image: productR300,
+  },
+
+  {
+    code: "RTP-R400",
+    name: "สีเคลือบผิวอีพ็อกซี่ อัตราส่วน 4 ต่อ 1",
+    description:
+      "สีอีพ็อกซี่คุณภาพสูง สำหรับงานพื้นอุตสาหกรรมและพื้นที่ใช้งานทั่วไป",
+    image: productR400,
+  },
+
+  {
+    code: "RTP-S201",
+    name: "สีอีพ็อกซี่ปรับระดับด้วยตัวเอง",
+    description:
+      "อีพ็อกซี่ปรับระดับด้วยตัวเอง ชนิดใส เหมาะสำหรับงานพื้นอุตสาหกรรม",
+    image: productS201,
+  },
+
+  { 
+    code: "RTP-PUMF35(G)",
+    name: "โพลียูรีเทนคอนกรีต 3-5 มม. ชนิดเงา",
+    description:  
+      "เหมาะสําหรับพื้นคอนกรีตในโรงงานอุตสาหกรรม เพื่อรองรับ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             การใช้งานที่หนักและทนทานต่อการเปลี่ยนแปลงของอุณหภูมิ",
+    image: productS300,
+  },
+
+  {
+    code: "RTP-PULF12(G)",
+    name: "โพลียูรีเทนคอนกรีต 1-2 มม. ชนิดเงา",
+    description: "เป็นระบบโพลียูรีเทนคอนกรีต เหมาะสําหรับงานพื้นคอนกรีตทั่วไป เพื่อเพิ่มความทนทานและสวยงาม",
+    image: productS302,
+  },
+
+  {
+    code: "RTP-S341",
+    name: "สีทับหน้าอีพ็อกซี่ปรับระดับ 2 ส่วน",
+    description: "เป็นสีทับหน้าอีพ็อกซี่ปรับระดับ 2 ส่วน ชนิดนำไฟฟ้าได้ มีสมบัติการถ่ายเทประจุไฟฟ้าได้ดี ",
+    image: productS303,
+  },  
+
+  {
+    code: "RTP-R500",
+    name: "สีโพลียูรีเทน ชนิดความเงาสูง สำหรับงานภายนอก",
+    description: "เป็นสีทับหน้าโพลียูรีเทน 2 ส่วน มีตัวทำละลาย ชนิดความเงาสูง ใช้สำหรับงานพื้นคอนกรีตที่ต้องการพื้นที่เงา สามารถใช้งานภายนอกได้",
+    image: productS304,
+  },
+
+  {
+    code: "RTP-W600",
+    name: "สีกันรั่วซึมโพลียูรีเทนความยืดหยุ่นสูง",
+    description: "เป็นสีกันรั่วซึมโพลียูรีเทน 2 ส่วน สูตรน้ำ เป็นมิตรต่อสิ่งแวดล้อม เหมาะสำหรับระบบกันซึมที่ต้องการฟิล์มบาง",
+    image: productS305,
+  },
+];
 const palettes = [
   { name: "Pure Green", hex: "#057e0b" },
-  { name: "Yello Orange", hex: "#e89607" },
+  { name: "Yello Orange", hex: "#e89607" }, 
   { name: "Sky Blue", hex: "#008fe1" },
   { name: "White", hex: "#ffffff" },                  
-];    
+];      
 /* ================= PAGE TRANSITION ================= */                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 function PageTransition({ children }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 25 }}
+  return (  
+    <motion.div                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+      initial={{ opacity: 0, y: 25 }}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -25 }}
       transition={{
@@ -69,7 +138,9 @@ function Navbar() {
           <Link to="/products" className="hover:text-orange-500">ผลิตภัณฑ์</Link>
           <Link to="/news" className="hover:text-orange-500">ข่าวสาร</Link>
           <Link to="/about" className="hover:text-orange-500">เกี่ยวกับเรา</Link>
-          <Link to="/contact" className="hover:text-orange-500">ติดต่อ</Link>
+          <Link to="/contact" className="hover:text-orange-500">ติดต่อ</Link> 
+          <Link to="/court" className="hover:text-orange-500">ออกแบบสนาม</Link>
+
         </nav>
 
         {/* Mobile Button */}
@@ -103,6 +174,9 @@ function Navbar() {
 
           <Link to="/contact" onClick={() => setOpen(false)}>
             ติดต่อ
+          </Link>
+          <Link to="/court" onClick={() => setOpen(false)}>
+            ออกแบบสนาม
           </Link>
 
         </div>
@@ -203,7 +277,7 @@ function Home() {
       {/* ================= ABOUT SECTION ================= */}
     <section className="py-12 px-6">
   <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-    
+
     {/* LEFT: IMAGE */}
     <div className="relative w-full flex justify-center lg:justify-start">
       <div className="absolute inset-0 bg-orange-500/10 blur-3xl rounded-full" />
@@ -258,38 +332,38 @@ function Home() {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
       {/* รูปที่ 1 */}
-      <div className="w-full max-w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
+      <div className="w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center bg-white">
         <img
           src={countImg}
           alt="ISO"
-          className="w-full h-full object-contain"
+          className="w-[240px] h-[160px] object-contain"
         />
       </div>
 
       {/* รูปที่ 2 */}
-      <div className="w-full max-w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
+      <div className="w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center bg-white">
         <img
           src={countImg2}
           alt="มอก."
-          className="w-full h-full object-contain"
+          className="w-[240px] h-[160px] object-contain"
         />
       </div>
 
       {/* รูปที่ 3 */}
-      <div className="w-full max-w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
+      <div className="w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center bg-white">
         <img
           src={countImg3}
           alt="GHPs."
-          className="w-full h-full object-contain"
+          className="w-[240px] h-[160px] object-contain"
         />
       </div>
 
       {/* รูปที่ 4 */}
-      <div className="w-full max-w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center">
+      <div className="w-[260px] h-[180px] rounded-3xl border border-orange-500 overflow-hidden flex items-center justify-center bg-white">
         <img
           src={countImg4}
           alt="HACCP."
-          className="w-full h-full object-contain"
+          className="w-[240px] h-[160px] object-contain"
         />
       </div>
 
@@ -307,6 +381,218 @@ function Home() {
     </div>
 
   </div>
+</section>
+
+<section className="py-15 px-6 bg-black text-white">
+
+  <div className="max-w-7xl mx-auto">
+
+    {/* TITLE */}
+    <div className="text-center mb-12">
+
+      <p className="text-orange-500 uppercase tracking-[5px] text-4xl mb-3">
+        Recommended Products
+      </p>
+
+      <h2 className="text-4xl md:text-3xl font-black">
+        สินค้าแนะนำ
+      </h2>
+
+    </div>
+
+    {/* SLIDER */}
+    <div className="relative px-4 md:px-10">
+
+    <Swiper
+  modules={[Autoplay, Navigation]}
+  
+  autoplay={{
+    delay: 2000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: false,
+  }}
+
+  loop={true}
+  speed={1000}
+
+  spaceBetween={30}
+
+  slidesPerView={1}
+  slidesPerGroup={1}
+
+  breakpoints={{
+    640: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+    },
+
+    1024: {
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+    },
+
+    1280: {
+      slidesPerView: 4,
+      slidesPerGroup: 1,
+    },
+  }}
+
+  navigation={{
+    nextEl: ".product-next",
+    prevEl: ".product-prev",
+  }}
+
+  className="recommendedSwiper"
+>
+
+        {recommendedProducts.map((product) => (
+
+          <SwiperSlide key={product.code}>
+
+          <div
+  className="
+    h-[470px]
+    bg-[#111111]
+    border-2
+    border-orange-500
+    rounded-[22px]
+    shadow-[0_0_20px_rgba(249,115,22,0.15)]
+    overflow-hidden
+    flex
+    flex-col
+    p-6
+    transition-all
+    duration-300
+    hover:-translate-y-2
+    hover:border-orange-400
+    hover:shadow-[0_0_30px_rgba(249,115,22,0.35)]
+  "
+>
+
+              {/* PRODUCT IMAGE */}
+              <div className="h-[200px] flex items-center justify-center">
+
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="
+                    max-w-[220px]
+                    max-h-[190px]
+                    object-contain
+                    transition-transform
+                    duration-300
+                    hover:scale-105
+                  "
+                />
+
+              </div>
+
+              {/* CODE */}
+              <p className="text-sm text-gray-400 font-semibold mt-3">
+                {product.code}
+              </p>
+
+              {/* NAME */}
+              <h3
+                className="
+                  text-xl
+                  font-bold
+                  text-orange-500
+                  leading-7
+                  mt-1
+                  min-h-[56px]
+                "
+              >
+                {product.name}
+              </h3>
+
+              {/* DESCRIPTION */}
+              <p
+                className="
+                  text-gray-500
+                  text-[15px]
+                  leading-6
+                  mt-2
+                  line-clamp-3
+                  flex-1
+                "
+              >
+                {product.description}
+              </p>
+
+              {/* BUTTON */}
+              <div className="flex justify-center mt-4">
+
+                <Link
+                  to={`/products`}
+                  className="
+                    bg-orange-500
+                    hover:bg-orange-600
+                    text-white
+                    font-bold
+                    px-8
+                    py-3
+                    rounded-full
+                    transition-all
+                    duration-300
+                    hover:scale-105
+                  "
+                >
+                  ดูผลิตภัณฑ์
+                </Link>
+
+              </div>
+
+            </div>
+
+          </SwiperSlide>
+
+        ))}
+
+      </Swiper>
+
+      {/* LEFT */}
+      <button
+        className="
+          product-prev
+          absolute
+          left-[-10px]
+          top-1/2
+          -translate-y-1/2
+          z-20
+          text-gray-600
+          hover:text-orange-500
+          text-6xl
+          font-light
+          transition
+        "
+      >
+        ‹
+      </button>
+
+      {/* RIGHT */}
+      <button
+        className="
+          product-next
+          absolute
+          right-[-10px]
+          top-1/2
+          -translate-y-1/2
+          z-20
+          text-gray-600
+          hover:text-orange-500
+          text-6xl
+          font-light
+          transition
+        "
+      >
+        ›
+      </button>
+
+    </div>
+
+  </div>
+
 </section>
 
       {/* ================= PRODUCT CATEGORY ================= */}
@@ -329,28 +615,24 @@ function Home() {
 
           {/* GRID */}
       
+{/* GRID */}
 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
 {[
   {
     name: "สีพื้นอุตสาหกรรม EPOXY",
-    img: epoxyBucket,
   },
   {
     name: "สีโครงสร้างเหล็ก",
-    img: steelBucket,
   },
   {
     name: "สีน้ำทาอาคาร",
-    img: buildingBucket,
   },
   {
     name: "สีกันรั่วซึม",
-    img: waterproofBucket,
   },
-  {
-    name: "สีสำหรับงานสนามกีฬา ",
-    img: specialBucket2,
+  { 
+    name: "สีสำหรับงานสนามกีฬา",
   },
 ].map((item, i) => (
   <Link
@@ -365,42 +647,20 @@ function Home() {
       p-8
     "
   >
-    <div
-  className="
-    w-32 h-32
-    rounded-3xl
-    bg-orange-500/10
-    flex items-center justify-center
-    mb-6
-    overflow-hidden
-  "
->
-  <img
-    src={item.img}
-    alt={item.name}
-    className="
-      w-28  
-      h-28
-      object-contain
-      transition-all
-      duration-300
-      group-hover:scale-110
-    "
-  />
-</div>
-    <h3 className="text-2xl font-bold mb-4">
-      {item.name}
-    </h3>
 
-    <p className="text-neutral-400 leading-relaxed">
+   <h3 className="text-2xl font-bold mb-4 text-orange-500">
+  {item.name}
+</h3>
+
+    <p className="text-neutral-1500 leading-relaxed">
       ผลิตภัณฑ์คุณภาพสูง
       สำหรับงานอุตสาหกรรมและงานมืออาชีพ
     </p>
+
   </Link>
 ))}
 
-          </div>
-
+</div>
         </div>
 
       </section>
@@ -1226,7 +1486,27 @@ export default function App() {
             </Layout>
           }
         />
+<Route
+  path="/contact"
+  element={
+    <Layout>
+      <PageTransition>
+        <Contact />
+      </PageTransition>
+    </Layout>
+  }
+/>
 
+<Route
+  path="/court"
+  element={
+    <Layout>
+      <PageTransition>
+        <CourtDesigner />
+      </PageTransition>
+    </Layout>
+  }
+/>
       </Routes>
 
     </AnimatePresence>
