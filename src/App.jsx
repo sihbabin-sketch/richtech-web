@@ -1,7 +1,6 @@
 import News from "./News";
 import ProductDesignHome from "./ProductDesignHome";
 import ProductDesigner from "./ProductDesigner";
-import CourtDesigner from "./CourtDesigner";
 import NewsDetail from "./NewsDetail";
 import React, { useState } from "react";
 import fbIcon from "./assets/fb.png";
@@ -140,7 +139,6 @@ function Navbar() {
           <Link to="/news" className="hover:text-orange-500">ข่าวสาร</Link>
           <Link to="/about" className="hover:text-orange-500">เกี่ยวกับเรา</Link>
           <Link to="/contact" className="hover:text-orange-500">ติดต่อ</Link> 
-          <Link to="/court" className="hover:text-orange-500">ออกแบบสนาม</Link>
 <Link to="/product-design" className="hover:text-orange-500">
   ออกแบบโปรดัก
 </Link>
@@ -179,9 +177,7 @@ function Navbar() {
           <Link to="/contact" onClick={() => setOpen(false)}>
             ติดต่อ
           </Link>
-          <Link to="/court" onClick={() => setOpen(false)}>
-            ออกแบบสนาม
-          </Link>
+      
           <Link to="/product-design" onClick={() => setOpen(false)}>
   ออกแบบโปรดัก
 </Link>
@@ -1486,17 +1482,6 @@ export default function App() {
             <Layout>
               <PageTransition>
                 <Contact />
-              </PageTransition>
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/court"
-          element={
-            <Layout>
-              <PageTransition>
-                <CourtDesigner />
               </PageTransition>
             </Layout>
           }

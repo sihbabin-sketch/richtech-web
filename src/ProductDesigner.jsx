@@ -5,7 +5,7 @@ import parkingImage from "./assets/product-design/parking.jpg";
 import sportsImage from "./assets/product-design/sports.jpg";
 import outdoorImage from "./assets/product-design/outdoor.jpg";
 
-// ชื่อโปรเจกต์ รูปตั้งต้น และตำแหน่งภาพเปลี่ยนสีของแต่ละพื้นที่
+// ชื่อโปรเจกต์ รูปตั้งต้น และตำแหน่งภาพเปลี่ยนสีของแต่ละพื้นที่ 
 // factory ใช้ path เดิมทั้งหมด จึงไม่กระทบระบบเลือกสีโรงงานที่ทำไว้
 const PROJECT_CONFIG = {
   factory: {
