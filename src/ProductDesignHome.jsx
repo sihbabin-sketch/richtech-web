@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import companyImage from "./assets/company-floor.PNG";
+import companyImage from "./assets/company-floor.png";
 import factoryImage from "./assets/product-design/original.png";
 import parkingImage from "./assets/product-design/parking.jpg";
 import sportsImage from "./assets/product-design/sports.jpg";
