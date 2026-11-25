@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import img5 from "./assets/s300.png";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 import img6 from "./assets/s400.png";
 import img8 from "./assets/s501.png";
@@ -38,7 +38,7 @@ import img44 from "./assets/W503 (2).png";
 import img45 from "./assets/R400 (2).png"; 
 import img46 from "./assets/PU01 (2).png"; 
 import img47 from "./assets/M101.png"; 
-import img48 from "./assets/M101 (2).png"; 
+import img48 from "./assets/M101 (2).png";     
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -1388,14 +1388,35 @@ images: [ img42,img43,],
     ],
   },
 ];
-
+const getCategoryImages = (category) => {
+  return category.items
+    .flatMap((item) => item.products || [])
+    .flatMap((product) => product.images || []);
+};
 export default function Products() {
 const [active, setActive] = useState(1);
 const [selectedItem, setSelectedItem] = useState(null);
 const [activeColor, setActiveColor] = useState(null);
+const [autoCategory, setAutoCategory] = useState(1);
   const detailRef = useRef(null);
 const [search, setSearch] = useState("");
   const current = categories.find((c) => c.id === active);
+  useEffect(() => {
+  const timer = setInterval(() => {
+    setAutoCategory((prev) => {
+      const currentIndex = categories.findIndex(
+        (cat) => cat.id === prev
+      );
+
+      const nextIndex =
+        (currentIndex + 1) % categories.length;
+
+      return categories[nextIndex].id;
+    });
+  }, 5000);
+
+  return () => clearInterval(timer);
+}, []);
   const allProducts = categories.flatMap((category) =>
   category.items.flatMap((item) =>
     item.products.map((product) => ({
@@ -1882,7 +1903,7 @@ const productsToShow = search
 
               <p className="text-neutral-300 text-sm">
                 {product.coverage}
-              </p>
+              </p>  
 
             </div>
 

@@ -1,4 +1,6 @@
 import News from "./News";
+import ProductDesignHome from "./ProductDesignHome";
+import ProductDesigner from "./ProductDesigner";
 import CourtDesigner from "./CourtDesigner";
 import NewsDetail from "./NewsDetail";
 import React, { useState } from "react";
@@ -8,10 +10,10 @@ import lineIcon from "./assets/LINE.png";
 import { motion, AnimatePresence } from "framer-motion";  
 import Products from "./Products.jsx";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
-import paintImage from "./assets/paint.png";  
+import paintImage from "./assets/paint.png";
 import countImg from "./assets/Q-PQAL UKAS.jpg";
-import countImg2 from "./assets/มอก.png"; 
-import interiorImage from "./assets/color-tank-open2.png";  
+import countImg2 from "./assets/มอก.png";
+import interiorImage from "./assets/color-tank-open2.png";
 import interiorImage2 from "./assets/RTP-Logo-01.png";
 import countImg3 from "./assets/GHPs_0.png";
 import countImg4 from "./assets/HACCP_0.png";
@@ -22,8 +24,7 @@ import productS300 from "./assets/PUMF35(G).png";
 import productS302 from "./assets/PULF12 (G).png";
 import productS303 from "./assets/s341.png";
 import productS304 from "./assets/R500.png";
-import productS305 from "./assets/W600.png";
-
+import productS305 from "./assets/W600.png";    
 import "swiper/css";
 import "swiper/css/navigation"; 
 import { Swiper, SwiperSlide } from "swiper/react";     
@@ -42,7 +43,7 @@ const recommendedProducts = [
     name: "สีเคลือบผิวอีพ็อกซี่ อัตราส่วน 4 ต่อ 1",
     description:
       "สีอีพ็อกซี่คุณภาพสูง สำหรับงานพื้นอุตสาหกรรมและพื้นที่ใช้งานทั่วไป",
-    image: productR400,
+    image: productR400, 
   },
 
   {
@@ -140,6 +141,9 @@ function Navbar() {
           <Link to="/about" className="hover:text-orange-500">เกี่ยวกับเรา</Link>
           <Link to="/contact" className="hover:text-orange-500">ติดต่อ</Link> 
           <Link to="/court" className="hover:text-orange-500">ออกแบบสนาม</Link>
+<Link to="/product-design" className="hover:text-orange-500">
+  ออกแบบโปรดัก
+</Link>
 
         </nav>
 
@@ -157,7 +161,7 @@ function Navbar() {
         <div className="md:hidden bg-black border-t border-orange-500/20 px-6 py-4 flex flex-col gap-4 text-white">
 
           <Link to="/" onClick={() => setOpen(false)}>
-            หน้าหลัก
+              
           </Link>
 
           <Link to="/products" onClick={() => setOpen(false)}>
@@ -178,7 +182,9 @@ function Navbar() {
           <Link to="/court" onClick={() => setOpen(false)}>
             ออกแบบสนาม
           </Link>
-
+          <Link to="/product-design" onClick={() => setOpen(false)}>
+  ออกแบบโปรดัก
+</Link>
         </div>
       )}
     </header>
@@ -1414,14 +1420,11 @@ function Layout({ children }) {
 
 /* ================= ROUTES ================= */
 export default function App() {
-
   const location = useLocation();
 
   return (
     <AnimatePresence mode="wait">
-
       <Routes location={location} key={location.pathname}>
-
         <Route
           path="/"
           element={
@@ -1444,27 +1447,28 @@ export default function App() {
           }
         />
 
-       <Route
-  path="/news"
-  element={
-    <Layout>
-      <PageTransition>
-        <News />
-      </PageTransition>
-    </Layout>
-  }
-/>
+        <Route
+          path="/news"
+          element={
+            <Layout>
+              <PageTransition>
+                <News />
+              </PageTransition>
+            </Layout>
+          }
+        />
 
-<Route
-  path="/news/:id"
-  element={
-    <Layout>
-      <PageTransition>
-        <NewsDetail />
-      </PageTransition>
-    </Layout>
-  }
-/>
+        <Route
+          path="/news/:id"
+          element={
+            <Layout>
+              <PageTransition>
+                <NewsDetail />
+              </PageTransition>
+            </Layout>
+          }
+        />
+
         <Route
           path="/about"
           element={
@@ -1486,30 +1490,42 @@ export default function App() {
             </Layout>
           }
         />
-<Route
-  path="/contact"
-  element={
-    <Layout>
-      <PageTransition>
-        <Contact />
-      </PageTransition>
-    </Layout>
-  }
-/>
 
-<Route
-  path="/court"
-  element={
-    <Layout>
-      <PageTransition>
-        <CourtDesigner />
-      </PageTransition>
-    </Layout>
-  }
-/>
+        <Route
+          path="/court"
+          element={
+            <Layout>
+              <PageTransition>
+                <CourtDesigner />
+              </PageTransition>
+            </Layout>
+          }
+        />
+
+        {/* หน้าเลือกพื้นที่ออกแบบ */}
+        <Route
+          path="/product-design"
+          element={
+            <Layout>
+              <PageTransition>
+                <ProductDesignHome />
+              </PageTransition>
+            </Layout>
+          }
+        />
+
+        {/* หน้าออกแบบพื้นที่ */}
+        <Route
+          path="/product-design/:area"
+          element={
+            <Layout>
+              <PageTransition>
+                <ProductDesigner />
+              </PageTransition>
+            </Layout>
+          }
+        />
       </Routes>
-
     </AnimatePresence>
-    
   );
 }
